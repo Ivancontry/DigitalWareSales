@@ -1,27 +1,19 @@
+using System.Reflection;
 using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using SysVentas.Products.WebApi.Infrastructure;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Infrastructure.Data;
-using SysVentas.Products.Infrastructure.Data.Base;
-using SysVentas.Products.Domain.Services;
-
-namespace SysVentas.Products.WebApi
+using SysVentas.Domain.Contracts;
+using SysVentas.Domain.Services;
+using SysVentas.Infrastructure.Data;
+using SysVentas.Infrastructure.Data.Base;
+using SysVentas.WebApi.Infrastructure;
+namespace SysVentas.WebApi
 {
     public class Startup
     {

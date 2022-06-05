@@ -1,11 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using SysVentas.Products.Domain.Entities.Categorys;
-using SysVentas.Products.Domain.Entities.Clients;
-using SysVentas.Products.Domain.Repositories;
-using SysVentas.Products.Infrastructure.Data.Base;
-
-namespace SysVentas.Products.Infrastructure.Data.Repositories
+﻿using SysVentas.Domain.Entities.Clients;
+using SysVentas.Domain.Repositories;
+using SysVentas.Infrastructure.Data.Base;
+namespace SysVentas.Infrastructure.Data.Repositories
 {
     public class ClientRepository : GenericRepository<Client>, IClientRepository
     {

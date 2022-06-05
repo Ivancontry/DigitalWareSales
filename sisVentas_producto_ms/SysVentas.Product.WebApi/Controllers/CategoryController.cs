@@ -1,11 +1,9 @@
-﻿using MediatR;
+﻿using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using SysVentas.Products.Application.Categorys;
-using SysVentas.Products.Application.Categorys.Products;
-
-namespace SysVentas.Products.WebApi.Controllers
+using SysVentas.Application.Categorys;
+using SysVentas.Application.Categorys.Products;
+namespace SysVentas.WebApi.Controllers
 {
     [Route("api/category")]
     [ApiController]

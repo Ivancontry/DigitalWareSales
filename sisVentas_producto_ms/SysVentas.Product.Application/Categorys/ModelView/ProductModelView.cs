@@ -1,9 +1,6 @@
 ﻿using System;
-using SysVentas.Products.Application.Base;
-using SysVentas.Products.Domain;
-using SysVentas.Products.Domain.Entities.Categorys;
-
-namespace SysVentas.Products.Application.Categorys.ModelView
+using SysVentas.Application.Base;
+namespace SysVentas.Application.Categorys.ModelView
 {
     public class ProductModelView : DTO<long, Domain.Entities.Categorys.Product, ProductModelView>
     {

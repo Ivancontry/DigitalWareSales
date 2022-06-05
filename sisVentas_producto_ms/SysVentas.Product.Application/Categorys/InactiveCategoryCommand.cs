@@ -1,16 +1,11 @@
-﻿using FluentValidation;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using SysVentas.Products.Domain;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Domain.Entities.Categorys;
-
-namespace SysVentas.Products.Application.Categorys
+using FluentValidation;
+using MediatR;
+using SysVentas.Domain.Contracts;
+using SysVentas.Domain.Entities.Categorys;
+namespace SysVentas.Application.Categorys
 {
     public class InactiveCategoryCommand : IRequestHandler<InactiveCategoryRequest, InactiveCategoryResponse>
     {

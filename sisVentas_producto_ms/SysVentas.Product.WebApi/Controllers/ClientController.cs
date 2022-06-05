@@ -1,10 +1,8 @@
-﻿using MediatR;
+﻿using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
-using SysVentas.Products.Application.Clients;
-
-namespace SysVentas.Products.WebApi.Controllers
+using SysVentas.Application.Clients;
+namespace SysVentas.WebApi.Controllers
 {
     [Route("api/client")]
     [ApiController]

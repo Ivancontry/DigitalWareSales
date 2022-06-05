@@ -1,17 +1,14 @@
-﻿using FluentValidation;
-using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SysVentas.Products.Application.Base;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Domain.Entities.Categorys;
-using SysVentas.Products.Domain.Entities.Invoices;
-
-namespace SysVentas.Products.Application.Invoices
+using FluentValidation;
+using MediatR;
+using SysVentas.Application.Base;
+using SysVentas.Domain.Contracts;
+using SysVentas.Domain.Entities.Categorys;
+using SysVentas.Domain.Entities.Invoices;
+namespace SysVentas.Application.Invoices
 {
     public class RegisterInvoiceCommand : IRequestHandler<RegisterInvoiceRequest, RegisterInvoiceResponse>
     {

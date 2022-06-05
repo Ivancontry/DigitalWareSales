@@ -1,17 +1,13 @@
-﻿
-using SysVentas.Products.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SysVentas.Products.Domain.Entities.Categorys;
-using SysVentas.Products.Infrastructure.Data.Base;
-
-namespace SysVentas.Products.Infrastructure.Data.Configurations
+using SysVentas.Infrastructure.Data.Base;
+namespace SysVentas.Infrastructure.Data.Configurations
 {
-    public class ProductEntityTypeConfiguration : IEntityTypeConfiguration<Product>
+    public class ProductEntityTypeConfiguration : IEntityTypeConfiguration<Domain.Entities.Categorys.Product>
     {
-        public void Configure(EntityTypeBuilder<Product> builder)
+        public void Configure(EntityTypeBuilder<Domain.Entities.Categorys.Product> builder)
         {
-            builder.ToTable(nameof(Products), ProductDataContext.DefaultSchema);
+            builder.ToTable(nameof(Product), ProductDataContext.DefaultSchema);
             builder.HasKey(t => t.Id);
 
             builder.HasOne(t => t.Category)

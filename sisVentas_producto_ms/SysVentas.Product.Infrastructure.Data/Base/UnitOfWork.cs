@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Domain.Repositories;
-using SysVentas.Products.Infrastructure.Data.Repositories;
-
-namespace SysVentas.Products.Infrastructure.Data.Base
+using SysVentas.Domain.Base;
+using SysVentas.Domain.Contracts;
+using SysVentas.Domain.Repositories;
+using SysVentas.Infrastructure.Data.Repositories;
+namespace SysVentas.Infrastructure.Data.Base
 {
     public class UnitOfWork : IUnitOfWork
     {

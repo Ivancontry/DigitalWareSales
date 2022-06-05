@@ -1,12 +1,8 @@
-﻿
-using SysVentas.Products.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SysVentas.Products.Domain.Entities.Categorys;
-using SysVentas.Products.Domain.Entities.Invoices;
-using SysVentas.Products.Infrastructure.Data.Base;
-
-namespace SysVentas.Products.Infrastructure.Data.Configurations
+using SysVentas.Domain.Entities.Invoices;
+using SysVentas.Infrastructure.Data.Base;
+namespace SysVentas.Infrastructure.Data.Configurations
 {
     public class InvoiceDetailEntityTypeConfiguration : IEntityTypeConfiguration<InvoiceDetail>
     {

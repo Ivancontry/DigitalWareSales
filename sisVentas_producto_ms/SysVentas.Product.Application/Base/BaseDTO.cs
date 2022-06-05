@@ -1,8 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
 using AutoMapper;
-using System.Collections.Generic;
-
-namespace SysVentas.Products.Application.Base
+namespace SysVentas.Application.Base
 {
     public abstract class BaseDTO
     {

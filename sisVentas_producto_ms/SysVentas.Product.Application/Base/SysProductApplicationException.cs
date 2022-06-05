@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SysVentas.Products.Application.Base
+namespace SysVentas.Application.Base
 {
     public class SysProductApplicationException: Exception
     {

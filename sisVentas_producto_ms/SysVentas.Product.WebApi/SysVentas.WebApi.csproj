@@ -19,6 +19,8 @@
   <ItemGroup>
     <ProjectReference Include="..\SysVentas.Application\SysVentas.Application.csproj" />
     <ProjectReference Include="..\SysVentas.Infrastructure.Data\SysVentas.Infrastructure.Data.csproj" />
+    <ProjectReference Include="..\SysVentas.Product.Application\SysVentas.Application.csproj" />
+    <ProjectReference Include="..\SysVentas.Product.Infrastructure.Data\SysVentas.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>

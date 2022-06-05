@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using SysVentas.Products.Domain.Base;
-
-namespace SysVentas.Products.Domain.Entities.Categorys
+using SysVentas.Domain.Base;
+namespace SysVentas.Domain.Entities.Categorys
 {
     public class Category: Entity<long>
     {

@@ -1,11 +1,7 @@
-﻿
-using SysVentas.Products.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SysVentas.Products.Domain.Entities.Categorys;
-using SysVentas.Products.Domain.Entities.Invoices;
-
-namespace SysVentas.Products.Infrastructure.Data.Configurations
+using SysVentas.Domain.Entities.Invoices;
+namespace SysVentas.Infrastructure.Data.Configurations
 {
     public class InvoiceMasterEntityTypeConfiguration : IEntityTypeConfiguration<InvoiceMaster>
     {

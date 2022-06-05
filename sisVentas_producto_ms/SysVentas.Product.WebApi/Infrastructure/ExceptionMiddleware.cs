@@ -1,14 +1,11 @@
-﻿
-using FluentValidation;
-using FluentValidation.Results;
-using Microsoft.AspNetCore.Http;
-using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading.Tasks;
-
-namespace SysVentas.Products.WebApi.Infrastructure
+using FluentValidation;
+using FluentValidation.Results;
+using Microsoft.AspNetCore.Http;
+namespace SysVentas.WebApi.Infrastructure
 {
     public class ExceptionMiddleware
     {

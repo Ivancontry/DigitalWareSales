@@ -1,16 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SysVentas.Products.Domain;
-using SysVentas.Products.Domain.Entities.Categorys;
-using SysVentas.Products.Domain.Entities.Invoices;
-using SysVentas.Products.Infrastructure.Data.Base;
-using SysVentas.Products.Infrastructure.Data.Configurations;
-
-namespace SysVentas.Products.Infrastructure.Data
+using SysVentas.Domain.Entities.Categorys;
+using SysVentas.Domain.Entities.Clients;
+using SysVentas.Domain.Entities.Invoices;
+using SysVentas.Infrastructure.Data.Base;
+using SysVentas.Infrastructure.Data.Configurations;
+namespace SysVentas.Infrastructure.Data
 {
     public class ProductDataContext: DbContextBase
     {
@@ -20,8 +14,8 @@ namespace SysVentas.Products.Infrastructure.Data
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Product> Clients { get; set; }
+        public DbSet<Domain.Entities.Categorys.Product> Products { get; set; }
+        public DbSet<Client> Clients { get; set; }
         public DbSet<InvoiceMaster> InvoiceMasters { get; set; }
         public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
         public static string DefaultSchema => "SysSales";

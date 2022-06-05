@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SysVentas.Products.Application.Base;
-using SysVentas.Products.Domain.Entities.Clients;
-
-namespace SysVentas.Products.Application.Clients.ModelView
+﻿using SysVentas.Application.Base;
+using SysVentas.Domain.Entities.Clients;
+namespace SysVentas.Application.Clients.ModelView
 {
     public class ClientModelView : DTO<long, Client, ClientModelView>
     {

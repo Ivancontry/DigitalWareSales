@@ -1,11 +1,10 @@
-﻿using FluentValidation;
-using MediatR;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-
-namespace SysVentas.Products.WebApi.Infrastructure
+using FluentValidation;
+using MediatR;
+namespace SysVentas.WebApi.Infrastructure
 {
     public class ValidatorPipelineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>

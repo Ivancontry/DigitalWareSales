@@ -1,8 +1,6 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace SysVentas.Products.Infrastructure.Data.Base
+namespace SysVentas.Infrastructure.Data.Base
 {
     public static class PropertyTypeConfiguration
     {

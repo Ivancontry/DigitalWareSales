@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SysVentas.Products.Infrastructure.Data;
+using SysVentas.Infrastructure.Data;
 
 namespace SysVentas.Product.Infrastructure.Data.Migrations
 {

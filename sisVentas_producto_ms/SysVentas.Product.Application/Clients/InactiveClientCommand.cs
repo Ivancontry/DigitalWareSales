@@ -1,15 +1,10 @@
-﻿using FluentValidation;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Domain.Entities.Clients;
-
-namespace SysVentas.Products.Application.Clients
+using FluentValidation;
+using MediatR;
+using SysVentas.Domain.Contracts;
+using SysVentas.Domain.Entities.Clients;
+namespace SysVentas.Application.Clients
 {
     public class InactiveClientCommand : IRequestHandler<InactiveClientRequest, InactiveClientResponse>
     {

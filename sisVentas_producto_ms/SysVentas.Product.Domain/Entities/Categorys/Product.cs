@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SysVentas.Products.Domain.Base;
-
-namespace SysVentas.Products.Domain.Entities.Categorys
+using SysVentas.Domain.Base;
+namespace SysVentas.Domain.Entities.Categorys
 {
     public class Product
     {

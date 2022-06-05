@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SysVentas.Products.Domain.Entities.Clients;
-using SysVentas.Products.Domain.Base;
-
-namespace SysVentas.Products.Domain.Entities.Invoices
+using SysVentas.Domain.Base;
+using SysVentas.Domain.Entities.Clients;
+namespace SysVentas.Domain.Entities.Invoices
 {
     public class InvoiceMaster : Entity<long>
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace SysVentas.Products.Application.Base
+namespace SysVentas.Application.Base
 {
     public interface IDTO<T>
     {

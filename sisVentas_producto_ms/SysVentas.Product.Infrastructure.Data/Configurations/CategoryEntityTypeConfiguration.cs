@@ -1,10 +1,7 @@
-﻿
-using SysVentas.Products.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SysVentas.Products.Domain.Entities.Categorys;
-
-namespace SysVentas.Products.Infrastructure.Data.Configurations
+using SysVentas.Domain.Entities.Categorys;
+namespace SysVentas.Infrastructure.Data.Configurations
 {
     public class CategoryEntityTypeConfiguration : IEntityTypeConfiguration<Category>
     {

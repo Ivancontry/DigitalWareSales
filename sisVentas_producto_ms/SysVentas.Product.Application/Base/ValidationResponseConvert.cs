@@ -1,9 +1,7 @@
-﻿using FluentValidation;
-using FluentValidation.Validators;
-using System.Linq;
-using SysVentas.Products.Domain.Base;
-
-namespace SysVentas.Products.Application.Base
+﻿using System.Linq;
+using FluentValidation;
+using SysVentas.Domain.Base;
+namespace SysVentas.Application.Base
 {
     public static class ValidationResponseConvert
     {

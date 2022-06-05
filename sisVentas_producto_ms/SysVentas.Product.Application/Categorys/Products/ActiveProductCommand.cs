@@ -1,14 +1,11 @@
-﻿using FluentValidation;
-using MediatR;
-using System;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using SysVentas.Products.Application.Base;
-using SysVentas.Products.Domain;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Domain.Entities.Categorys;
-
-namespace SysVentas.Products.Application.Categorys.Products
+using FluentValidation;
+using MediatR;
+using SysVentas.Application.Base;
+using SysVentas.Domain.Contracts;
+using SysVentas.Domain.Entities.Categorys;
+namespace SysVentas.Application.Categorys.Products
 {
     public class ActiveProductCommand : IRequestHandler<ActiveProductRequest, ActiveProductResponse>
     {

@@ -1,14 +1,11 @@
-﻿using MediatR;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SysVentas.Products.Application.Categorys.ModelView;
-using SysVentas.Products.Domain.Base;
-
-namespace SysVentas.Products.Application.Categorys
+using MediatR;
+using SysVentas.Application.Categorys.ModelView;
+using SysVentas.Domain.Contracts;
+namespace SysVentas.Application.Categorys
 {
     public class GetCategoryQuery : IRequestHandler<GetCategoryRequest, GetCategoryResponse>
     {

@@ -1,15 +1,9 @@
-﻿using FluentValidation;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
-using SysVentas.Products.Domain;
-using SysVentas.Products.Domain.Base;
-
-namespace SysVentas.Products.Application.Clients
+using FluentValidation;
+using MediatR;
+using SysVentas.Domain.Contracts;
+namespace SysVentas.Application.Clients
 {
     public class UpdateClientCommand : IRequestHandler<UpdateClientRequest, UpdateClientResponse>
     {

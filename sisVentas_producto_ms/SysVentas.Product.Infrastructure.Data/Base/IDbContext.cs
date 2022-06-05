@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Threading.Tasks;
-
-namespace SysVentas.Products.Infrastructure.Data.Base
+namespace SysVentas.Infrastructure.Data.Base
 {
     public interface IDbContext
     {

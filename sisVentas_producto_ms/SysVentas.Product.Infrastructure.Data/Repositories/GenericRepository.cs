@@ -1,14 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using SysVentas.Products.Domain.Base;
-using SysVentas.Products.Infrastructure.Data.Base;
-
-namespace SysVentas.Products.Infrastructure.Data.Repositories
+using Microsoft.EntityFrameworkCore;
+using SysVentas.Domain.Base;
+using SysVentas.Domain.Contracts;
+using SysVentas.Infrastructure.Data.Base;
+namespace SysVentas.Infrastructure.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {

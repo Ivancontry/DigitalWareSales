@@ -1,6 +1,5 @@
 using System;
-
-namespace SysVentas.Products.WebApi
+namespace SysVentas.WebApi
 {
     public class WeatherForecast
     {
