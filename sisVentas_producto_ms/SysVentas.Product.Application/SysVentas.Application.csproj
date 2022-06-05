@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SysVentas.Product.Domain\SysVentas.Product.Domain.csproj" />
+    <ProjectReference Include="..\SysVentas.Domain\SysVentas.Domain.csproj" />
+    <ProjectReference Include="..\SysVentas.Domain\SysVentas.Domain.csproj" />
+    <ProjectReference Include="..\SysVentas.Domain\SysVentas.Domain.csproj" />
   </ItemGroup>
 
 </Project>

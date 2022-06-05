@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace SysVentas.Products.Domain.Base
+namespace SysVentas.Domain.Base
 {
     public class DomainException: Exception
     {

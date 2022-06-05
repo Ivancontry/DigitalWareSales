@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SysVentas.Products.Domain.Base
+namespace SysVentas.Domain.Base
 {
     public class DomainValidation
     {

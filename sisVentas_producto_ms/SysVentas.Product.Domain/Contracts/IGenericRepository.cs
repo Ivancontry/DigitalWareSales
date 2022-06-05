@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SysVentas.Products.Domain.Base;
 
-namespace SysVentas.Products.Domain.Base
+namespace SysVentas.Domain.Base
 {
     public interface IGenericRepository<T> where T:BaseEntity
     {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SysVentas.Products.Domain.Base;
 using SysVentas.Products.Domain.Repositories;
 
-namespace SysVentas.Products.Domain.Base
+namespace SysVentas.Domain.Base
 {
     public interface IUnitOfWork: IDisposable
     {

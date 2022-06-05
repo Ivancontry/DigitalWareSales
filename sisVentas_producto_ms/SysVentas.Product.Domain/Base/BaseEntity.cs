@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace SysVentas.Products.Domain.Base
+namespace SysVentas.Domain.Base
 {
     public abstract class BaseEntity
     {
