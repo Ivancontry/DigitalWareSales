@@ -19,6 +19,7 @@ using SysVentas.Products.WebApi.Infrastructure;
 using SysVentas.Products.Domain.Base;
 using SysVentas.Products.Infrastructure.Data;
 using SysVentas.Products.Infrastructure.Data.Base;
+using SysVentas.Products.Domain.Services;
 
 namespace SysVentas.Products.WebApi
 {
@@ -38,6 +39,7 @@ namespace SysVentas.Products.WebApi
             services.AddDbContext<ProductDataContext>
                 (opt => opt.UseSqlServer(connectionString));
 
+            services.AddTransient<ICancelInvoiceMasterService, CancelInvoiceMasterService>();
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorPipelineBehavior<,>));
             InyeccionFluentValidations(services);
             services.AddScoped<IDbContext, ProductDataContext>();

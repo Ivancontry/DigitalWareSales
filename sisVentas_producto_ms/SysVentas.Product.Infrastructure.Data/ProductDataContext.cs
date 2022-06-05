@@ -24,7 +24,7 @@ namespace SysVentas.Products.Infrastructure.Data
         public DbSet<Product> Clients { get; set; }
         public DbSet<InvoiceMaster> InvoiceMasters { get; set; }
         public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
-        public static string DefaultSchema => "SysVentas";
+        public static string DefaultSchema => "SysSales";
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CategoryEntityTypeConfiguration());
