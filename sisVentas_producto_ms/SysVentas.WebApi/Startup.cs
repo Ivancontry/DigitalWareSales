@@ -37,11 +37,11 @@ namespace SysVentas.WebApi
             services.AddScoped<IDbContext, ProductDataContext>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddMediatR(Assembly.Load("SysVentas.Product.Application"));
+            services.AddMediatR(Assembly.Load("SysVentas.Application"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SysVentas.Product.WebApi", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SysVentas.WebApi", Version = "v1" });
             });
 
 
@@ -49,7 +49,7 @@ namespace SysVentas.WebApi
 
         private void InyeccionFluentValidations(IServiceCollection services)
         {
-            AssemblyScanner.FindValidatorsInAssembly(Assembly.Load("SysVentas.Product.Application")).ForEach(pair =>
+            AssemblyScanner.FindValidatorsInAssembly(Assembly.Load("SysVentas.Application")).ForEach(pair =>
             {
                 // RegisterValidatorsFromAssemblyContaing does this:
                 services.Add(ServiceDescriptor.Scoped(pair.InterfaceType, pair.ValidatorType));
@@ -65,7 +65,7 @@ namespace SysVentas.WebApi
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SysVentas.Product.WebApi v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SysVentas.WebApi v1"));
             }
 
             app.UseHttpsRedirection();
