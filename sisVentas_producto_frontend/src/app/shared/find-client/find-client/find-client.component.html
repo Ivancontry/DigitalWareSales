@@ -1,0 +1,9 @@
+<form (submit)="$event.preventDefault();FindClient()">
+    <dx-form [formData]="request" labelLocation="top" [colCount]="2">
+        <dxi-item dataField="identification" [label]="{text:'Identificación'}"></dxi-item>
+        <dxi-item
+            itemType="button" horizontalAlignment="left" verticalAlignment="bottom"
+            [buttonOptions]="submitButtonOptions">
+        </dxi-item>
+    </dx-form>
+</form>

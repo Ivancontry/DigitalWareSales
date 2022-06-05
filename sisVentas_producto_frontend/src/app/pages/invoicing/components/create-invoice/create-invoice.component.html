@@ -1,0 +1,32 @@
+<h2 class="content-block">Facturación</h2>
+<div class="content-block dx-card responsive-paddings">
+    <app-find-client (onFoundClient)="SetClient($event)"></app-find-client>
+    <dx-form [formData]="client" [readOnly]="true" [colCount]="4">
+        <dxi-item dataField="identification" [label]="{text:'Identificación'}"></dxi-item>
+        <dxi-item dataField="name" [label]="{text:'Nombre'}"></dxi-item>
+        <dxi-item dataField="email" [label]="{text:'Email'}"></dxi-item>
+        <dxi-item dataField="phone" [label]="{text:'Telefono'}"></dxi-item>
+    </dx-form>
+</div>
+<div class="content-block dx-card responsive-paddings">
+    <app-find-product (onFoundProduct)="SetProduct($event)"></app-find-product>
+    <dx-form [formData]="product" [colCount]="6">
+        <dxi-item dataField="code" [label]="{text:'Código'}" [editorOptions]="{readOnly:true}"></dxi-item>
+        <dxi-item dataField="name" [label]="{text:'Nombre'}" [editorOptions]="{readOnly:true}"></dxi-item>
+        <dxi-item dataField="price" [label]="{text:'Precio'}" [editorOptions]="{readOnly:true}"></dxi-item>
+        <dxi-item dataField="amount" [label]="{text:'En stock'}" [editorOptions]="{readOnly:true}"></dxi-item>
+        <dxi-item dataField="amountToBeAdded" [label]="{text:'Cantidad'}"></dxi-item>
+        <dxi-item
+            itemType="button" horizontalAlignment="left" verticalAlignment="bottom"
+            [buttonOptions]="submitButtonOptions">
+        </dxi-item>
+    </dx-form>
+</div>
+<dx-data-grid class="dx-card wide-card" noDataText="Sin productos agregados"
+              [dataSource]="details">
+    <dxi-column dataField="productName" caption="Nombre de producto"></dxi-column>
+    <dxi-column dataField="price" caption="Precio"></dxi-column>
+    <dxi-column dataField="amount" caption="Cantidad" dataType="number"></dxi-column>
+    <dxi-column dataField="total" dataType="number"></dxi-column>
+</dx-data-grid>
+

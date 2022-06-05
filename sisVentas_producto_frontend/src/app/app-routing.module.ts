@@ -44,6 +44,11 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
+    path: 'invoicing',
+    loadChildren: () => import('./pages/invoicing/invoicing.module').then(m => m.InvoicingModule),
+    canActivate: [ AuthGuardService ]
+  },
+  {
     path: '**',
     redirectTo: 'home'
   }
