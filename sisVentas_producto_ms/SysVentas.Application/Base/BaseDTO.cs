@@ -26,11 +26,9 @@ namespace SysVentas.Application.Base
 
         }
 
-        public virtual List<TDTO> ToListEntity(List<TEntity> dTOs)
+        public virtual List<TDTO> ToListDTO(List<TEntity> dTOs)
         {
-
             return mapper.Map<List<TDTO>>(dTOs);
-
         }
     }
 }

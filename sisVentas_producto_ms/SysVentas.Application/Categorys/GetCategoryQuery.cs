@@ -19,7 +19,7 @@ namespace SysVentas.Application.Categorys
         {
             var categories = _unitOfWork.CategorysRepository.FindBy(t=> t.Status != "IN").ToList();
             var categoryModelView = new CategoryModelView();
-            var categorysModelViws =  categoryModelView.ToListEntity(categories);
+            var categorysModelViws =  categoryModelView.ToListDTO(categories);
             return Task.FromResult(new GetCategoryResponse(categorysModelViws));
         }
     }
