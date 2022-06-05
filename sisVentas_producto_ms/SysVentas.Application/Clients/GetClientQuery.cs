@@ -19,7 +19,7 @@ namespace SysVentas.Application.Clients
         {
             var clients = _unitOfWork.ClientsRepository.FindBy(t=> t.Status != "IN").ToList();
             var clientModelView = new ClientModelView();
-            var clientModelViews = clientModelView.ToListEntity(clients);
+            var clientModelViews = clientModelView.ToListDTO(clients);
             return Task.FromResult(new GetClientResponse(clientModelViews));
         }
     }

@@ -20,7 +20,7 @@ namespace SysVentas.Application.Categorys.Products
         {
             var category = _unitOfWork.CategorysRepository.FindFirstOrDefault(t=> t.Id == request.CategoryId,includeProperties:"Products");
             var productModelView = new ProductModelView();
-            var productsModelViws = productModelView.ToListEntity(category.Products.Where(t=> t.Status!="IN").ToList());
+            var productsModelViws = productModelView.ToListDTO(category.Products.Where(t=> t.Status!="IN").ToList());
             return Task.FromResult(new GetProductForCategoryResponse(category.Id,productsModelViws));
         }
     }
