@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SysVentas.Domain\SysVentas.Domain.csproj" />
-    <ProjectReference Include="..\SysVentas.Product.Domain\SysVentas.Domain.csproj" />
   </ItemGroup>
 
 </Project>
