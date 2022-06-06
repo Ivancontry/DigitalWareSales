@@ -31,6 +31,13 @@ namespace SysVentas.WebApi.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetForId(long id)
+        {
+            var response = await _mediator.Send(new GetInvoiceForIdRequest { Id = id});
+            return Ok(response);
+        }
+
         [HttpPut]
         public async Task<IActionResult> PutCancel(CancelInvoiceRequest request)
         {

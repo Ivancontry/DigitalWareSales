@@ -9,7 +9,7 @@ namespace SysVentas.Domain.Entities.Invoices
         public long ClientId { get; set; }
         public Client Client { get; set; }
         public DateTime Date { get; set; }
-        public DateTime DateCancel { get; private set; }
+        public DateTime? DateCancel { get; private set; }
         public decimal Total { get; set; }
         public List<InvoiceDetail> Details { get; set; }
         private InvoiceMaster()

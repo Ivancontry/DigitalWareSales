@@ -18,5 +18,6 @@ namespace SysVentas.Application.Invoices.ModelView
         public decimal Price { get; set; }
         public decimal Total { get; set; }
         public long InvoiceMasterId { get; set; }
+        public string Status { get; set; }
     }
 }

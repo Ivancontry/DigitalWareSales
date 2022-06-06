@@ -36,7 +36,7 @@ namespace SysVentas.Domain.Test
             invoice.AddDetail(productLaptopAcer.Id,1,productLaptopAcer.Price);            
             invoice.AddDetail(productXiaomi.Id, 1, productXiaomi.Price);
             Assert.AreEqual(2600000, invoice.Total);
-
+            
         }
     }
 }
