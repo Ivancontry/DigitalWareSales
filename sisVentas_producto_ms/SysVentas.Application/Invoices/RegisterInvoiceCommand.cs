@@ -27,7 +27,7 @@ namespace SysVentas.Application.Invoices
             {
                 var product = _unitOfWork.CategorysRepository.GetProduct(p.ProductId);
                 invoice.AddDetail(product.Id, Math.Abs(p.Amount), product.Price);
-                product.Category.UpdateStockProduct(product.Id, p.Amount);
+                product.Category.UpdateStockProduct(product.Id, p.Amount*-1);
             });
             _unitOfWork.InvoicesMasterRepository.Add(invoice);
             _unitOfWork.Commit();

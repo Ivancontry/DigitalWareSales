@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SysVentas.Infrastructure.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SysVentas.Application", "SysVentas.Application\SysVentas.Application.csproj", "{6FFAF99B-7D9D-4A4B-9FFD-756D5CBEBCB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysVentas.Domain.Test", "SysVentas.Domain.Test\SysVentas.Domain.Test.csproj", "{E058C317-EE74-42AD-A5ED-0E40827322DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysVentas.Application.Test", "SysVentas.Application.Test\SysVentas.Application.Test.csproj", "{146A5141-9E44-422D-90EE-187991FC1EAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{6FFAF99B-7D9D-4A4B-9FFD-756D5CBEBCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FFAF99B-7D9D-4A4B-9FFD-756D5CBEBCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FFAF99B-7D9D-4A4B-9FFD-756D5CBEBCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E058C317-EE74-42AD-A5ED-0E40827322DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E058C317-EE74-42AD-A5ED-0E40827322DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E058C317-EE74-42AD-A5ED-0E40827322DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E058C317-EE74-42AD-A5ED-0E40827322DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{146A5141-9E44-422D-90EE-187991FC1EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{146A5141-9E44-422D-90EE-187991FC1EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{146A5141-9E44-422D-90EE-187991FC1EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{146A5141-9E44-422D-90EE-187991FC1EAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
