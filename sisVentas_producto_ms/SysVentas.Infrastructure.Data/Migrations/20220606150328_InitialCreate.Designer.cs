@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SysVentas.Infrastructure.Data;
 
-namespace SysVentas.Product.Infrastructure.Data.Migrations
+namespace SysVentas.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ProductDataContext))]
-    [Migration("20220605180939_InitialCreate")]
+    [Migration("20220606150328_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Categorys.Category", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Categorys.Category", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                     b.ToTable("Category", "SysSales");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Categorys.Product", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Categorys.Product", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -80,10 +80,10 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", "SysSales");
+                    b.ToTable("Product", "SysSales");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Clients.Client", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Clients.Client", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -116,10 +116,10 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Client");
+                    b.ToTable("Clients");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Invoices.InvoiceDetail", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Invoices.InvoiceDetail", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -153,7 +153,7 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                     b.ToTable("InvoiceDetail", "SysSales");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Invoices.InvoiceMaster", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Invoices.InvoiceMaster", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -185,9 +185,9 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                     b.ToTable("InvoiceMaster", "SysSales");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Categorys.Product", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Categorys.Product", b =>
                 {
-                    b.HasOne("SysVentas.Products.Domain.Entities.Categorys.Category", "Category")
+                    b.HasOne("SysVentas.Domain.Entities.Categorys.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -196,15 +196,15 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Invoices.InvoiceDetail", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Invoices.InvoiceDetail", b =>
                 {
-                    b.HasOne("SysVentas.Products.Domain.Entities.Invoices.InvoiceMaster", "InvoiceMaster")
+                    b.HasOne("SysVentas.Domain.Entities.Invoices.InvoiceMaster", "InvoiceMaster")
                         .WithMany("Details")
                         .HasForeignKey("InvoiceMasterId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("SysVentas.Products.Domain.Entities.Categorys.Product", "Product")
+                    b.HasOne("SysVentas.Domain.Entities.Categorys.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -215,9 +215,9 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Invoices.InvoiceMaster", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Invoices.InvoiceMaster", b =>
                 {
-                    b.HasOne("SysVentas.Products.Domain.Entities.Clients.Client", "Client")
+                    b.HasOne("SysVentas.Domain.Entities.Clients.Client", "Client")
                         .WithMany()
                         .HasForeignKey("ClientId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -226,12 +226,12 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                     b.Navigation("Client");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Categorys.Category", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Categorys.Category", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("SysVentas.Products.Domain.Entities.Invoices.InvoiceMaster", b =>
+            modelBuilder.Entity("SysVentas.Domain.Entities.Invoices.InvoiceMaster", b =>
                 {
                     b.Navigation("Details");
                 });

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SysVentas.Infrastructure.Data;
 
-namespace SysVentas.Product.Infrastructure.Data.Migrations
+namespace SysVentas.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ProductDataContext))]
     partial class ProductDataContextModelSnapshot : ModelSnapshot

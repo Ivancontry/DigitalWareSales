@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SysVentas.Product.Infrastructure.Data.Migrations
+namespace SysVentas.Infrastructure.Data.Migrations
 {
     public partial class InitialCreate : Migration
     {
@@ -29,7 +29,7 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Client",
+                name: "Clients",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
@@ -45,11 +45,11 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Client", x => x.Id);
+                    table.PrimaryKey("PK_Clients", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Product",
                 schema: "SysSales",
                 columns: table => new
                 {
@@ -65,9 +65,9 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Product", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Products_Category_CategoryId",
+                        name: "FK_Product_Category_CategoryId",
                         column: x => x.CategoryId,
                         principalSchema: "SysSales",
                         principalTable: "Category",
@@ -93,9 +93,9 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 {
                     table.PrimaryKey("PK_InvoiceMaster", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_InvoiceMaster_Client_ClientId",
+                        name: "FK_InvoiceMaster_Clients_ClientId",
                         column: x => x.ClientId,
-                        principalTable: "Client",
+                        principalTable: "Clients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -125,10 +125,10 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_InvoiceDetail_Products_ProductId",
+                        name: "FK_InvoiceDetail_Product_ProductId",
                         column: x => x.ProductId,
                         principalSchema: "SysSales",
-                        principalTable: "Products",
+                        principalTable: "Product",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -152,9 +152,9 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 column: "ClientId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_CategoryId",
+                name: "IX_Product_CategoryId",
                 schema: "SysSales",
-                table: "Products",
+                table: "Product",
                 column: "CategoryId");
         }
 
@@ -169,11 +169,11 @@ namespace SysVentas.Product.Infrastructure.Data.Migrations
                 schema: "SysSales");
 
             migrationBuilder.DropTable(
-                name: "Products",
+                name: "Product",
                 schema: "SysSales");
 
             migrationBuilder.DropTable(
-                name: "Client");
+                name: "Clients");
 
             migrationBuilder.DropTable(
                 name: "Category",
