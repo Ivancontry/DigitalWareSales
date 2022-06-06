@@ -1,6 +1,11 @@
-.padding-1{
+.padding-1 {
     padding: 10px;
 }
-.inline-items{
+
+.inline-items {
     display: inline;
+}
+
+div.content-block h2 + .dx-button{
+    float: right;
 }

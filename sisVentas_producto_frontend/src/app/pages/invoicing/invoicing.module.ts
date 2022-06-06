@@ -6,17 +6,23 @@ import {FindClientModule} from "../../shared/find-client/find-client.module";
 import {RouterModule} from "@angular/router";
 import {DxiItemModule} from "devextreme-angular/ui/nested";
 import {DxButtonModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
+import { ListInvoicesComponent } from './components/list-invoices/list-invoices.component';
 
 const routes = [
     {
         path: '',
+        component:ListInvoicesComponent
+    },
+    {
+        path: 'create',
         component:CreateInvoiceComponent
     }
 ]
 
 @NgModule({
     declarations: [
-        CreateInvoiceComponent
+        CreateInvoiceComponent,
+        ListInvoicesComponent
     ],
     imports: [
         CommonModule,

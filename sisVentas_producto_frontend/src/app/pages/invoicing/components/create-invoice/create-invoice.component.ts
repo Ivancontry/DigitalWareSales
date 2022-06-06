@@ -3,6 +3,7 @@ import {FindClientModel} from "../../../../shared/find-client/find-client-model"
 import {FindProductModel} from "../../../../shared/find-product/find-product-model";
 import {InvoiceDetail} from '../../models/invoice-detail';
 import {CreateInvoiceRequest, CreateInvoiceService} from "../../services/create-invoice.service";
+import CustomStore from "devextreme/data/custom_store";
 
 @Component({
     selector: 'app-create-invoice',
@@ -13,6 +14,7 @@ export class CreateInvoiceComponent implements OnInit {
     client: FindClientModel = new FindClientModel();
     product: FindProductModel = new FindProductModel();
     details: InvoiceDetail[] = [];
+    dataSource: any;
     submitButtonOptions: any = {
         text: 'Agregar',
         onClick: this.AddProduct.bind(this)
@@ -22,6 +24,11 @@ export class CreateInvoiceComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.dataSource = new CustomStore({
+            key:"productId",
+            load:options => this.details,
+            remove: key => this.RemoveProduct(key)
+        })
     }
 
     SetClient(client: FindClientModel) {
@@ -61,6 +68,12 @@ export class CreateInvoiceComponent implements OnInit {
             if (!result) return;
             alert(result.message);
         })
+    }
+
+    private RemoveProduct(productId: number) {
+        const indexDetail =  this.details.findIndex(t=> t.productId == productId);
+        this.details.splice(indexDetail, 1);
+        return Promise.resolve(undefined);
     }
 }
 

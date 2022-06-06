@@ -18,7 +18,10 @@
         <dxi-item dataField="name" [label]="{text:'Nombre'}" [editorOptions]="{readOnly:true}"></dxi-item>
         <dxi-item dataField="price" [label]="{text:'Precio'}" [editorOptions]="{readOnly:true}"></dxi-item>
         <dxi-item dataField="amount" [label]="{text:'En stock'}" [editorOptions]="{readOnly:true}"></dxi-item>
-        <dxi-item dataField="amountToBeAdded" [label]="{text:'Cantidad'}"></dxi-item>
+        <dxi-item dataField="amountToBeAdded" [label]="{text:'Cantidad'}">
+            <dxi-validation-rule type="required" message="Cantidad es requerida"></dxi-validation-rule>
+            <dxi-validation-rule type="" message="Cantidad es requerida"></dxi-validation-rule>
+        </dxi-item>
         <dxi-item
             itemType="button" horizontalAlignment="left" verticalAlignment="bottom"
             [buttonOptions]="submitButtonOptions">
@@ -27,9 +30,18 @@
 </div>
 <dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados"
               [dataSource]="details">
+    <dxo-editing
+        mode="row"
+        [allowDeleting]="true"
+        [useIcons]="true"
+        [texts]="{confirmDeleteMessage:'Esta seguro que quiere eliminar este registro'}"
+    ></dxo-editing>
     <dxi-column dataField="productName" caption="Nombre de producto"></dxi-column>
     <dxi-column dataField="price" caption="Precio"></dxi-column>
     <dxi-column dataField="amount" caption="Cantidad" dataType="number"></dxi-column>
     <dxi-column dataField="total" dataType="number"></dxi-column>
+    <dxi-column type="buttons">
+        <dxi-button name="delete"></dxi-button>
+    </dxi-column>
 </dx-data-grid>
 
