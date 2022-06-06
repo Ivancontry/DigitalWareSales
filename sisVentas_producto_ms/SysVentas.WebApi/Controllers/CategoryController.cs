@@ -78,18 +78,18 @@ namespace SysVentas.WebApi.Controllers
             var response = await _mediator.Send(request);
             return Ok(response);
         }
-
-        [HttpPut("product/stocks")]
-        public async Task<IActionResult> PutStocks(UpdateProductStoreRequest request)
-        {
-            var response = await _mediator.Send(request);
-            return Ok(response);
-        }
+                
 
         [HttpGet("{idcategory}/product")]
         public async Task<IActionResult> GetProduct(long idcategory)
         {
             var response = await _mediator.Send(new GetProductForCategoryRequest { CategoryId = idcategory});
+            return Ok(response);
+        }
+        [HttpGet("code/{code}/product")]
+        public async Task<IActionResult> GetProductForCode(string code)
+        {
+            var response = await _mediator.Send(new GetProductForCodeRequest { Code = code });
             return Ok(response);
         }
     }

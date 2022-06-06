@@ -29,6 +29,13 @@ namespace SysVentas.WebApi.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{identification}")]
+        public async Task<IActionResult> Get(string identification)
+        {
+            var response = await _mediator.Send(new GetClientForIdentificationRequest { Identification = identification});
+            return Ok(response);
+        }
+
         [HttpPut]
         public async Task<IActionResult> Put(UpdateClientRequest request)
         {

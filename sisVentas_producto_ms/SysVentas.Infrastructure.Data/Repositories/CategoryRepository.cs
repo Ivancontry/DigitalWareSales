@@ -16,7 +16,14 @@ namespace SysVentas.Infrastructure.Data.Repositories
         {
             var context = Db as ProductDataContext;
             var product = context.Products.Include(p=> p.Category)
-                                          .FirstOrDefault(t => t.Id == productId);
+                                          .FirstOrDefault(t => t.Id == productId && t.Status != "IN");
+            return product;
+        }
+
+        public Domain.Entities.Categorys.Product GetProductForCode(string code)
+        {
+            var context = Db as ProductDataContext;
+            var product = context.Products.FirstOrDefault(t => t.Code == code && t.Status != "IN");
             return product;
         }
     }

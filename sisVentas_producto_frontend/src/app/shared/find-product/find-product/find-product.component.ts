@@ -1,3 +1,4 @@
+import { ProductService } from './../../services/product.service';
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FindProductModel} from "../find-product-model";
 
@@ -14,18 +15,19 @@ export class FindProductComponent implements OnInit {
         useSubmitBehavior: true
     };
 
-    constructor() {
+    constructor(private productService:ProductService) {
     }
 
     ngOnInit(): void {
     }
 
-    FindProduct() {
-        const product = new FindProductModel();
-        product.code = "CJa-89";
-        product.name = "Azucar";
-        product.price = 45000;
-        product.amount = 150;
+    findProduct() {
+        var findProductRequest = this.request;
+        var product = new FindProductModel();
+        this.productService.getProductForCode(findProductRequest.code).subscribe(t=>
+            {
+                Object.assign(product,t.product);
+            });
         this.onFoundProduct.emit(product);
     }
 }

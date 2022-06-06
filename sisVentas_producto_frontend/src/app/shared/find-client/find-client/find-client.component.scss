@@ -1,0 +1,16 @@
+#form {
+    padding-top: 1px;
+    font-size: 16px;
+}
+::ng-deep .dx-field-item-label {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+::ng-deep .dx-field-item {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.dx-texteditor.dx-editor-filled .dx-placeholder::before, .dx-texteditor.dx-editor-filled .dx-texteditor-input, .dx-texteditor.dx-editor-outlined .dx-placeholder::before, .dx-texteditor.dx-editor-outlined .dx-texteditor-input {
+    padding: 4px 4px 4px;
+}

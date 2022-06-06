@@ -7,7 +7,7 @@ namespace SysVentas.Infrastructure.Data.Configurations
     {
         public void Configure(EntityTypeBuilder<Domain.Entities.Categorys.Product> builder)
         {
-            builder.ToTable(nameof(Product), ProductDataContext.DefaultSchema);
+            builder.ToTable(nameof(Domain.Entities.Categorys.Product), ProductDataContext.DefaultSchema);
             builder.HasKey(t => t.Id);
 
             builder.HasOne(t => t.Category)

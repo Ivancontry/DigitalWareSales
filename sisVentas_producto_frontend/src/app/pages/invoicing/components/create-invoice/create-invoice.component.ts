@@ -10,7 +10,7 @@ import {InvoiceDetail} from '../../models/invoice-detail';
 })
 export class CreateInvoiceComponent implements OnInit {
     client: FindClientModel = new FindClientModel();
-    product: ProductToBeAdded = new ProductToBeAdded();
+    product: FindProductModel = new FindProductModel();
     details: InvoiceDetail[] = [];
     submitButtonOptions: any = {
         text: 'Agregar',
@@ -29,7 +29,8 @@ export class CreateInvoiceComponent implements OnInit {
     }
 
     SetProduct(product: FindProductModel) {
-        this.product = Object.assign({amountToBeAdded: 0}, product) || new ProductToBeAdded();
+        this.product = product;
+        this.product.amountToBeAdded =  0;
     }
 
     private AddProduct() {

@@ -44,17 +44,17 @@ namespace SysVentas.Application.Clients
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        private Client _client;
+    
         public InactiveClientValidator(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            RuleFor(x => x.Id).Must(ExistCategory).WithMessage($"Categoria no encontrada");           
+            RuleFor(x => x.Id).Must(ExistClient).WithMessage($"Cliente no encontrado");           
 
         }
-        private bool ExistCategory(long id)
+        private bool ExistClient(long id)
         {
-            _client = _unitOfWork.ClientsRepository.FindFirstOrDefault(t => t.Id == id);
-            return _client != null;
+            var client = _unitOfWork.ClientsRepository.FindFirstOrDefault(t => t.Id == id);
+            return client is not null;
         }
         
     }

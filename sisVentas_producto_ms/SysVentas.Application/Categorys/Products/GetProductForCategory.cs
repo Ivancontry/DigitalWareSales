@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentValidation;
 using MediatR;
 using SysVentas.Application.Categorys.ModelView;
 using SysVentas.Domain.Contracts;
@@ -36,6 +37,22 @@ namespace SysVentas.Application.Categorys.Products
         {
             Products = categoryModelViews;
             CategoryId = categoryId;
+        }
+    }
+
+    public class GetProductForCategoryValidator: AbstractValidator<GetProductForCategoryRequest>
+    {
+        private readonly IUnitOfWork _unitOfWork;
+        public GetProductForCategoryValidator(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+            RuleFor(x => x.CategoryId).Must(ExistCategory).WithMessage($"Categoría no encontrada");
+        }
+
+        private bool ExistCategory(long id)
+        {
+            var category = _unitOfWork.CategorysRepository.FindFirstOrDefault(t => t.Id == id);
+            return category is not null;
         }
     }
 }

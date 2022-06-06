@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { ClientService } from '../../services/client.service';
 import {FindClientModel} from "../find-client-model";
 
 @Component({
@@ -14,18 +15,19 @@ export class FindClientComponent implements OnInit {
         useSubmitBehavior: true
     };
 
-    constructor() {
+    constructor(private clientService: ClientService) {
     }
 
     ngOnInit(): void {
     }
 
-    FindClient() {
-        const client = new FindClientModel();
-        client.identification = "1065840833";
-        client.phone = "3218599874";
-        client.email = "duvanguia@gmail.com";
-        client.name = "Duvan Guia";
+    findClient() {
+        var findClientRequest = this.request;
+        var client = new FindClientModel();
+        this.clientService.getClientForIdentification(findClientRequest.identification).subscribe(t=>
+            {
+                Object.assign(client,t.client);
+            });
         this.onFoundClient.emit(client);
     }
 }

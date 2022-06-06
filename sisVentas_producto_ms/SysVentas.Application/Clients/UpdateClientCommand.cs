@@ -24,7 +24,7 @@ namespace SysVentas.Application.Clients
     }
     public record UpdateClientRequest : IRequest<UpdateClientResponse>{
         public long Id { get; set; }
-        public string Identification { get; internal set; }
+        public string Identification { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Age { get; set; }
@@ -50,11 +50,11 @@ namespace SysVentas.Application.Clients
         public UpdateClientValidator(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            RuleFor(x => x.Identification).NotEmpty().WithMessage("Nombre no puede ser vacío");
+            RuleFor(x => x.Identification).NotEmpty().WithMessage("Identificación no puede ser vacía");
             RuleFor(x => x.Name).NotEmpty().WithMessage("Nombre no puede ser vacío");
             RuleFor(x => x.Address).NotEmpty().WithMessage("Dirección no puede ser vacía");
             RuleFor(x => x.Email).EmailAddress().WithMessage("Correo es invalido");
-            RuleFor(x => x.Phone).EmailAddress().WithMessage("Correo es invalido");
+            RuleFor(x => x.Phone).NotEmpty().WithMessage("Teléfono no puede ser vacío");
             RuleFor(x => x.Identification).Must(ExistClient).WithMessage($"El código de esta Categoría ya se encuentra registrado");
         }
 

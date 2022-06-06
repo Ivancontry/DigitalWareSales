@@ -12,6 +12,7 @@ using SysVentas.Domain.Contracts;
 using SysVentas.Domain.Services;
 using SysVentas.Infrastructure.Data;
 using SysVentas.Infrastructure.Data.Base;
+using SysVentas.Infrastructure.Data.initialize;
 using SysVentas.WebApi.Infrastructure;
 namespace SysVentas.WebApi
 {
@@ -67,7 +68,10 @@ namespace SysVentas.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "SysVentas.WebApi v1"));
             }
-
+            app.UseCors(x => x
+                  .AllowAnyOrigin()
+                  .AllowAnyMethod()
+                  .AllowAnyHeader());
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -89,7 +93,8 @@ namespace SysVentas.WebApi
             var context = scope.ServiceProvider.GetRequiredService<ProductDataContext>();
             if (env.IsDevelopment())
             {
-                
+                var initializeDevelopment = new InitializeDevelopmentSales(context);
+                initializeDevelopment.Initialize();
             }
         }
     }

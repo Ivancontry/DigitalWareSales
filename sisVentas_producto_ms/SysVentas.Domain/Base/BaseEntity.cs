@@ -31,7 +31,7 @@ namespace SysVentas.Domain.Base
                 StatusObject.Inactive, "IN"
             },
             {
-                StatusObject.Approve, "AN"
+                StatusObject.Cancel, "AN"
             },
             {
                 StatusObject.Approve, "AP"

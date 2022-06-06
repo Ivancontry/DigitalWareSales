@@ -8,7 +8,8 @@ namespace SysVentas.Application.Categorys.ModelView
         public DateTime Date { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
-        public int Amount { get; set; }
+        public decimal Amount { get; set; }
         public long CategoryId { get; set; }
+        public decimal Price { get; set; }
     }
 }
