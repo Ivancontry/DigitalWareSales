@@ -1,1 +1,20 @@
-<p>list-invoices works!</p>
+<h2 class="content-block">Facturas</h2>
+<dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados"
+              [dataSource]="invoices">
+    <dxo-editing
+        mode="row"
+        [allowDeleting]="true"
+        [useIcons]="true"
+        [texts]="{confirmDeleteMessage:'Esta seguro que quiere eliminar este registro'}"
+    ></dxo-editing>
+    <dxi-column dataField="date" caption="Fecha de Creación"></dxi-column>
+    <dxi-column dataField="dateCancel" caption="Fecha de Anulación"></dxi-column>
+    <dxi-column dataField="client.name" caption="Cliente"></dxi-column>
+    <dxi-column dataField="total" format="currency" dataType="number"></dxi-column>
+    <dxi-column dataField="status" caption="Estado"></dxi-column>
+    <dxi-column type="buttons">
+        <dxi-button name="delete"></dxi-button>
+    </dxi-column>
+</dx-data-grid>
+
+
