@@ -5,7 +5,7 @@ import {FindProductModule} from "../../shared/find-product/find-product.module";
 import {FindClientModule} from "../../shared/find-client/find-client.module";
 import {RouterModule} from "@angular/router";
 import {DxiItemModule} from "devextreme-angular/ui/nested";
-import {DxDataGridModule, DxFormModule} from "devextreme-angular";
+import {DxButtonModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
 
 const routes = [
     {
@@ -25,7 +25,8 @@ const routes = [
         FindClientModule,
         DxiItemModule,
         DxFormModule,
-        DxDataGridModule
+        DxDataGridModule,
+        DxButtonModule
     ]
 })
 export class InvoicingModule {

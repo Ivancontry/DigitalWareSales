@@ -3,4 +3,5 @@ export class InvoiceDetail {
     price:number | undefined;
     amount:number | undefined;
     total:number | undefined;
+    productId: number | undefined;
 }

@@ -3,4 +3,5 @@ export class FindClientModel {
     name: string | undefined;
     email: string | undefined;
     phone: string | undefined;
+    id: number | undefined;
 }

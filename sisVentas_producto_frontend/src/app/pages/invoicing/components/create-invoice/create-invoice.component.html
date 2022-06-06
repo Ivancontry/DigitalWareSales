@@ -1,5 +1,8 @@
-<h2 class="content-block">Facturación</h2>
-<div class="content-block dx-card responsive-paddings">
+<div class="content-block ">
+    <h2 class="inline-items">Facturación</h2>
+    <dx-button type="button" text="Guardar" (onClick)="CreateInvoice()"></dx-button>
+</div>
+<div class="content-block dx-card padding-1">
     <app-find-client (onFoundClient)="SetClient($event)"></app-find-client>
     <dx-form [formData]="client" [readOnly]="true" [colCount]="4">
         <dxi-item dataField="identification" [label]="{text:'Identificación'}"></dxi-item>
@@ -8,7 +11,7 @@
         <dxi-item dataField="phone" [label]="{text:'Telefono'}"></dxi-item>
     </dx-form>
 </div>
-<div class="content-block dx-card responsive-paddings">
+<div class="content-block dx-card padding-1">
     <app-find-product (onFoundProduct)="SetProduct($event)"></app-find-product>
     <dx-form [formData]="product" [colCount]="6">
         <dxi-item dataField="code" [label]="{text:'Código'}" [editorOptions]="{readOnly:true}"></dxi-item>
@@ -22,7 +25,7 @@
         </dxi-item>
     </dx-form>
 </div>
-<dx-data-grid class="dx-card wide-card" noDataText="Sin productos agregados"
+<dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados"
               [dataSource]="details">
     <dxi-column dataField="productName" caption="Nombre de producto"></dxi-column>
     <dxi-column dataField="price" caption="Precio"></dxi-column>

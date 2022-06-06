@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FindClientModel} from "../../../../shared/find-client/find-client-model";
 import {FindProductModel} from "../../../../shared/find-product/find-product-model";
 import {InvoiceDetail} from '../../models/invoice-detail';
+import {CreateInvoiceRequest, CreateInvoiceService} from "../../services/create-invoice.service";
 
 @Component({
     selector: 'app-create-invoice',
@@ -17,8 +18,7 @@ export class CreateInvoiceComponent implements OnInit {
         onClick: this.AddProduct.bind(this)
     };
 
-
-    constructor() {
+    constructor(private _createInvoiceService: CreateInvoiceService) {
     }
 
     ngOnInit(): void {
@@ -30,7 +30,7 @@ export class CreateInvoiceComponent implements OnInit {
 
     SetProduct(product: FindProductModel) {
         this.product = product;
-        this.product.amountToBeAdded =  0;
+        this.product.amountToBeAdded = 0;
     }
 
     private AddProduct() {
@@ -42,11 +42,25 @@ export class CreateInvoiceComponent implements OnInit {
             return;
         }
         const detail: InvoiceDetail = Object.assign({
+            productId: this.product.id,
             productName: this.product.name,
             total: (this.product.price || 0) * (this.product.amountToBeAdded || 0)
         }, this.product)
         detail.amount = Number(this.product.amountToBeAdded);
         this.details.push(detail);
+    }
+
+    CreateInvoice() {
+        if (!this.details || this.details.length == 0) return;
+        const request: CreateInvoiceRequest = {
+            clientId: this.client.id,
+            date: new Date(),
+            products: this.details.map(t => ({productId: t.productId, amount: t.amount}))
+        }
+        this._createInvoiceService.createInvoice(request).subscribe(result => {
+            if (!result) return;
+            alert(result.message);
+        })
     }
 }
 
