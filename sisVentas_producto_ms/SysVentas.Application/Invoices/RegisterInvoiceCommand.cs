@@ -46,7 +46,7 @@ namespace SysVentas.Application.Invoices
         public string Message { get; set; }
         public RegisterInvoiceResponse()
         {
-            this.Message = "¡Operación Exitosa!";
+            Message = "¡Operación Exitosa!";
         }
     }
     public class RegisterInvoiceValidator : AbstractValidator<RegisterInvoiceRequest>
@@ -56,7 +56,7 @@ namespace SysVentas.Application.Invoices
         public RegisterInvoiceValidator(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            ProductValidator = new ProductValidator(this._unitOfWork);
+            ProductValidator = new ProductValidator(_unitOfWork);
             RuleFor(x => x.ClientId).Must(ExistirClient).WithMessage(t => $"Cliente de id {t.ClientId} no encontrado");
             RuleForEach(x => x.Products).SetValidator(ProductValidator).When(x => x.Products.Count > 0);
         }
@@ -80,7 +80,7 @@ namespace SysVentas.Application.Invoices
             {
                 if (ExistirProduct(a.product.ProductId))
                 {
-                    this.Product.Category.CanUpdateStockProduct(a.product.ProductId, a.product.Amount).ToValidationFailure(context);
+                    Product.Category.CanUpdateStockProduct(a.product.ProductId, a.product.Amount).ToValidationFailure(context);
                 }
             }).When(t=> Product is not null);
         }

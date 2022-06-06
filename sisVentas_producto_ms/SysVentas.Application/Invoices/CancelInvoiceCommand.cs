@@ -24,7 +24,7 @@ namespace SysVentas.Application.Invoices
         public Task<CancelInvoiceResponse> Handle(CancelInvoiceRequest request, CancellationToken cancellationToken)
         {
             var invoiceMaster = _unitOfWork.InvoicesMasterRepository.FindFirstOrDefault(t => t.Id == request.Id, includeProperties: "Details.Product.Category");
-            this._cancelInvoiceMasterService.CancelInvoiceMaster(invoiceMaster,request.DateCancel);
+            _cancelInvoiceMasterService.CancelInvoiceMaster(invoiceMaster,request.DateCancel);
             _unitOfWork.Commit();
             return Task.FromResult(new CancelInvoiceResponse());
         }
@@ -40,7 +40,7 @@ namespace SysVentas.Application.Invoices
         public string Message { get; set; }
         public CancelInvoiceResponse()
         {
-            this.Message = "¡Operación Exitosa!";
+            Message = "¡Operación Exitosa!";
         }
     }
     public class CancelInvoiceValidator : AbstractValidator<CancelInvoiceRequest>

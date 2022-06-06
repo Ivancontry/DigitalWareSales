@@ -42,8 +42,8 @@ namespace SysVentas.Application.Categorys.Products
 
         public RegisterProductResponse(long id)
         {
-            this.Id = id;
-            this.Message = "¡Operación Exitosa!";
+            Id = id;
+            Message = "¡Operación Exitosa!";
         }
     }
 

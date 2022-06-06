@@ -35,8 +35,8 @@ namespace SysVentas.Application.Clients
 
         public ActiveClientResponse(long id)
         {
-            this.Id = id;
-            this.Message = "¡Operación Exitosa!";
+            Id = id;
+            Message = "¡Operación Exitosa!";
         }
     }
 

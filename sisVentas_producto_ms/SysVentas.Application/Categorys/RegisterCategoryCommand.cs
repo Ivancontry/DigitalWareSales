@@ -39,7 +39,7 @@ namespace SysVentas.Application.Categorys
         public RegisterCategoryResponse(long id)
         {
             this.id = id;
-            this.Message = "¡Operación Exitosa!";
+            Message = "¡Operación Exitosa!";
         }
     }
 

@@ -74,6 +74,8 @@ namespace SysVentas.WebApi
                   .AllowAnyHeader());
             app.UseHttpsRedirection();
 
+            app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseRouting();
 
             app.UseAuthorization();

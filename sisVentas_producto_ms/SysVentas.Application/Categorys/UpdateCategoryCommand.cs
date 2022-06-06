@@ -37,7 +37,7 @@ namespace SysVentas.Application.Categorys
         public UpdateCategoryResponse(long id)
         {
             this.id = id;
-            this.Message = "¡Operación Exitosa!";
+            Message = "¡Operación Exitosa!";
         }
     }
 

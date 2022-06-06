@@ -12,7 +12,7 @@ namespace SysVentas.Infrastructure.Data.Repositories
 
         }
 
-        public Domain.Entities.Categorys.Product GetProduct(long productId)
+        public Product GetProduct(long productId)
         {
             var context = Db as ProductDataContext;
             var product = context.Products.Include(p=> p.Category)
@@ -20,7 +20,7 @@ namespace SysVentas.Infrastructure.Data.Repositories
             return product;
         }
 
-        public Domain.Entities.Categorys.Product GetProductForCode(string code)
+        public Product GetProductForCode(string code)
         {
             var context = Db as ProductDataContext;
             var product = context.Products.FirstOrDefault(t => t.Code == code && t.Status != "IN");

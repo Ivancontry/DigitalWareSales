@@ -12,12 +12,12 @@ namespace SysVentas.Domain.Base
         public bool IsValid { get => Fallos.Count == 0; }
         public DomainValidation()
         {
-            this.Fallos = new Dictionary<string, string>();
-            this.Fallos.Clear();
+            Fallos = new Dictionary<string, string>();
+            Fallos.Clear();
         }
         public void AddFailed(string key, string error)
         {
-            this.Fallos.Add(key, error);
+            Fallos.Add(key, error);
         }
     }
 }

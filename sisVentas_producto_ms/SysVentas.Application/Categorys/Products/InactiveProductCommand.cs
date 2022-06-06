@@ -37,8 +37,8 @@ namespace SysVentas.Application.Categorys.Products
 
         public InactiveProductResponse(long id)
         {
-            this.Id = id;
-            this.Message = "¡Operación Exitosa!";
+            Id = id;
+            Message = "¡Operación Exitosa!";
         }
     }
 

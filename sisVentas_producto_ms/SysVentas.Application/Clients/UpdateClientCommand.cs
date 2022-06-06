@@ -40,8 +40,8 @@ namespace SysVentas.Application.Clients
 
         public UpdateClientResponse(long id)
         {
-            this.Id = id;
-            this.Message = "¡Operación Exitosa!";
+            Id = id;
+            Message = "¡Operación Exitosa!";
         }
     }
 

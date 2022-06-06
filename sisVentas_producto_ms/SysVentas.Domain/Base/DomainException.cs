@@ -10,8 +10,8 @@ namespace SysVentas.Domain.Base
         public Dictionary<string, string> Errors { get; }
         public DomainException(DomainValidation validator)
         {
-            this._domainValidation = validator;
-            this.Errors = this._domainValidation.Fallos;
+            _domainValidation = validator;
+            Errors = _domainValidation.Fallos;
         }
 
         public DomainException(string message) : base(message)
