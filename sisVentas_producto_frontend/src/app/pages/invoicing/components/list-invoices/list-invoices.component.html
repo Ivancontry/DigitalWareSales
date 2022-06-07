@@ -10,14 +10,15 @@
     <dxi-column dataField="client.name" caption="Cliente"></dxi-column>
     <dxi-column dataField="total" format="currency" dataType="number"></dxi-column>
     <dxi-column dataField="status" caption="Estado"></dxi-column>
-    <dxi-column dataField="" [showEditorAlways]="true"
-                [fixed]="true" editCellTemplate="editTemplate">
-    </dxi-column>
+    <dxi-column dataField="" [showEditorAlways]="true" [fixed]="true" editCellTemplate="editTemplate"></dxi-column>
     <ng-template #editorTemplate let-data="data"></ng-template>
+
     <div *dxTemplate="let data of 'editTemplate'">
-        <dx-button type="default" (onClick)="seeDetail(data.data)" text="Ver">
+        <dx-button type="success" (onClick)="seeDetail(data.data)" text="Ver"></dx-button>
+        <dx-button type="danger" *ngIf="data.data.status != 'AN'" (onClick)="cancelInvoice(data.data)" text="Anular">
         </dx-button>
     </div>
+
     <div *dxTemplate="let data of 'valueTemplate'">
         <ng-container [ngTemplateOutlet]="editorTemplate"
                       [ngTemplateOutletContext]="{ data: data, editTemplate: false }"></ng-container>

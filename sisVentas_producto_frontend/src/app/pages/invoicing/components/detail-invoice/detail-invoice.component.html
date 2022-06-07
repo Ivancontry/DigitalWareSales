@@ -1,6 +1,6 @@
 <div class="content-block dx-card padding-1">
     <dx-form [formData]="invoiceMaster" [readOnly]="true" [colCount]="4">
-        <dxi-item dataField="createdAt"
+        <dxi-item dataField="createdAt" editorType="dxTextBox"
                   [editorOptions]="{format:{dataType:'date',format:'shortDateShortTime' }}"
                   [label]="{text:'Fecha Creación'}"></dxi-item>
 
