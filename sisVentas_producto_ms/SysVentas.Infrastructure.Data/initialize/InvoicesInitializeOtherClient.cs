@@ -33,13 +33,13 @@ namespace SysVentas.Infrastructure.Data.initialize
 
             var invoiceDuvan3 = new InvoiceMaster(clientDuvan.Id);
             invoiceDuvan3.AddDetail(productFootWearWhite.Id, 2, productFootWearWhite.Price);
-            categoryFootWear.UpdateStockProduct(productFootWearBlue.Id, -2);
+            categoryFootWear.UpdateStockProduct(productFootWearWhite.Id, -2);
             invoiceDuvan3.CreatedAt = new DateTime(2000, 02, 5);
             productDataContext.InvoiceMasters.Add(invoiceDuvan3);
 
             var invoiceDuvan4 = new InvoiceMaster(clientDuvan.Id);
             invoiceDuvan4.AddDetail(productFootWearWhite.Id, 16, productFootWearWhite.Price);
-            categoryFootWear.UpdateStockProduct(productFootWearBlue.Id, -16);
+            categoryFootWear.UpdateStockProduct(productFootWearWhite.Id, -16);
             invoiceDuvan4.CreatedAt = new DateTime(2000, 06, 5);
             productDataContext.InvoiceMasters.Add(invoiceDuvan4);
             #endregion
