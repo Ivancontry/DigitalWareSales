@@ -16,12 +16,6 @@ export class CreateInvoiceService {
         return this._httpClient.post<{ message: string }>(`${environment.baseUrl}invoice`, request);
     }
 
-    getInvoices(): Observable<any>{
-        return this._httpClient.get<any>(`${environment.baseUrl}invoice`);
-    }
-    getInvoice(id:number): Observable<any>{
-        return this._httpClient.get<any>(`${environment.baseUrl}invoice/${id}`);
-    }
 }
 
 class CreateInvoiceProductRequest {

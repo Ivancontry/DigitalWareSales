@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {InvoiceMaster} from '../../models/invoice-master';
-import {CreateInvoiceService} from '../../services/create-invoice.service';
 import {ActivatedRoute} from "@angular/router";
+import { DetailInvoiceService } from '../../services/detail-invoice.service';
 
 @Component({
     selector: 'tests-detail-invoice',
@@ -12,7 +12,7 @@ export class DetailInvoiceComponent implements OnInit {
     invoiceMaster: InvoiceMaster = new InvoiceMaster();
     invoiceId: number = 0;
 
-    constructor(private _createInvoiceService: CreateInvoiceService, _activatedRoute: ActivatedRoute) {
+    constructor(private _detailInvoiceService: DetailInvoiceService, _activatedRoute: ActivatedRoute) {
         this.invoiceId = _activatedRoute.snapshot.params.invoiceId;
     }
 
@@ -21,7 +21,7 @@ export class DetailInvoiceComponent implements OnInit {
     }
 
     getInvoice() {
-        this._createInvoiceService.getInvoice(this.invoiceId).subscribe(t => {
+        this._detailInvoiceService.getInvoice(this.invoiceId).subscribe(t => {
             this.invoiceMaster = Object.assign({} as InvoiceMaster, t.invoiceMaster);
         });
     }
