@@ -34,13 +34,13 @@ namespace SysVentas.Infrastructure.Data.initialize
 
                 var invoiceIvan3 = new InvoiceMaster(clientIvan.Id);
                 invoiceIvan3.AddDetail(productLaptopHp.Id, 2, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -2);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -2);
                 invoiceIvan3.CreatedAt = new DateTime(2000, 02, 5);
                 productDataContext.InvoiceMasters.Add(invoiceIvan3);
 
                 var invoiceIvan4 = new InvoiceMaster(clientIvan.Id);
                 invoiceIvan4.AddDetail(productLaptopHp.Id, 6, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -6);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -6);
                 invoiceIvan4.CreatedAt = new DateTime(2000, 06, 5);
                 productDataContext.InvoiceMasters.Add(invoiceIvan4);
 
@@ -49,8 +49,8 @@ namespace SysVentas.Infrastructure.Data.initialize
 
             #region categoryClothing
             var categoryClothing = productDataContext.Categories.Include(t => t.Products).FirstOrDefault(t => t.Code == "Clo-002");
-            var productClothingShirt = categoryTechnology.Products.FirstOrDefault(t => t.Code == "Pan-01");
-            var productClothingPants = categoryTechnology.Products.FirstOrDefault(t => t.Code == "Shi-11");
+            var productClothingShirt = categoryClothing.Products.FirstOrDefault(t => t.Code == "Pan-01");
+            var productClothingPants = categoryClothing.Products.FirstOrDefault(t => t.Code == "Shi-11");
 
             #endregion
 
@@ -70,13 +70,13 @@ namespace SysVentas.Infrastructure.Data.initialize
 
                 var invoiceHelmer3 = new InvoiceMaster(clientHelmer.Id);
                 invoiceHelmer3.AddDetail(productLaptopHp.Id, 1, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -1);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -1);
                 invoiceHelmer3.CreatedAt = new DateTime(2000, 03, 13);
                 productDataContext.InvoiceMasters.Add(invoiceHelmer3);
 
                 var invoiceHelmer4 = new InvoiceMaster(clientHelmer.Id);
                 invoiceHelmer4.AddDetail(productLaptopHp.Id, 2, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -2);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -2);
                 invoiceHelmer4.CreatedAt = new DateTime(2000, 04, 12);
                 productDataContext.InvoiceMasters.Add(invoiceIvan4);
 
