@@ -42,6 +42,7 @@ export class CreateInvoiceComponent implements OnInit {
 
     private AddProduct() {
         if (!this.product) return;
+        if (!this.validateAmount()) return;
         const sameDetail = this.details.find(t => t.productName == this.product.name);
         if (sameDetail) {
             sameDetail.amount = Number(this.product.amountToBeAdded);
@@ -75,6 +76,15 @@ export class CreateInvoiceComponent implements OnInit {
         this.details.splice(indexDetail, 1);
         return Promise.resolve(undefined);
     }
+
+    validateAmount() {
+        return this.AmountBeNonNegative() && this.AmountBeLessThanStock();
+    }
+
+    AmountBeNonNegative() {
+        return (this.product?.amountToBeAdded || 0) > 0;
+    }
+    AmountBeLessThanStock = () =>  (this.product.amountToBeAdded || 0) <= (this.product.amount || 0);
 }
 
 export class ProductToBeAdded {
