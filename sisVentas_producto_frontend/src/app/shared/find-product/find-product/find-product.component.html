@@ -1,4 +1,12 @@
-<form (submit)="$event.preventDefault();findProduct()">
+<dx-select-box noDataText="No hay coincidencias" label="Producto" labelMode="outside"
+               (onValueChanged)="findProduct($event.value)"
+               [dataSource]="products"
+               displayExpr="name"
+               searchMode="contains"
+               [searchEnabled]="true"
+></dx-select-box>
+
+<!-- <form (submit)="$event.preventDefault();findProduct()">
     <dx-form [formData]="request" labelLocation="top" [colCount]="2">
         <dxi-item dataField="code" [label]="{text:'Código'}"></dxi-item>
         <dxi-item
@@ -6,4 +14,4 @@
             [buttonOptions]="submitButtonOptions">
         </dxi-item>
     </dx-form>
-</form>
+</form> -->
