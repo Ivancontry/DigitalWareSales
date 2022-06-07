@@ -28,7 +28,7 @@ namespace SysVentas.Domain.Test
             #endregion
 
             #region Client
-                var clientIvan = new Client("1003195636", "Ivan Contreras", "3004558041", "22", "Mz C Casa 19 San Jeronimo", "ivancontry.13@gmail.com");
+                var clientIvan = new Client("1003195636", "Ivan Contreras", "3004558041", new DateTime(1999,05,15), "Mz C Casa 19 San Jeronimo", "ivancontry.13@gmail.com");
                 clientIvan.Id = 1;
             #endregion
 

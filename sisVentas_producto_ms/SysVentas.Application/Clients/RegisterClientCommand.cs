@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
@@ -17,7 +18,7 @@ namespace SysVentas.Application.Clients
         }
         public Task<RegisterClientResponse> Handle(RegisterClientRequest request, CancellationToken cancellationToken)
         {
-            var client = new Client(request.Identification,request.Name,request.Phone,request.Age,request.Address,request.Email);
+            var client = new Client(request.Identification,request.Name,request.Phone,request.BirthDay,request.Address,request.Email);
             _unitOfWork.ClientsRepository.Add(client);
             _unitOfWork.Commit();
             return Task.FromResult(new RegisterClientResponse(client.Id));
@@ -27,7 +28,7 @@ namespace SysVentas.Application.Clients
         public string Identification { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
-        public string Age { get; set; }
+        public DateTime BirthDay { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
     }
@@ -54,6 +55,7 @@ namespace SysVentas.Application.Clients
             RuleFor(x => x.Address).NotEmpty().WithMessage("Dirección no puede ser vacía");
             RuleFor(x => x.Email).EmailAddress().WithMessage("Correo es invalido");
             RuleFor(x => x.Phone).NotEmpty().WithMessage("Teléfono no puede ser vacío");
+            RuleFor(x => x.BirthDay).NotEmpty().WithMessage("Fecha de nacimiento no puede ser vacía");
             RuleFor(x => x.Identification).Must(ExistClient).WithMessage($"El código de esta Categoría ya se encuentra registrado");
         }
 

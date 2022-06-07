@@ -10,7 +10,7 @@ using SysVentas.Infrastructure.Data;
 namespace SysVentas.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ProductDataContext))]
-    [Migration("20220607043013_InitialCreate")]
+    [Migration("20220607044514_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,8 +93,8 @@ namespace SysVentas.Infrastructure.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Age")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("BirthDay")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
