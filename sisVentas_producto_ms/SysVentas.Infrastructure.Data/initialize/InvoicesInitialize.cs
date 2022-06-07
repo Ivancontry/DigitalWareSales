@@ -6,7 +6,7 @@ using SysVentas.Domain.Entities.Invoices;
 
 namespace SysVentas.Infrastructure.Data.initialize
 {
-    public static class InvoicesInitialize
+    public static partial class InvoicesInitialize
     {
         public static void InitializeInvoice(ProductDataContext productDataContext) {
             #region categoryTechnology
@@ -81,6 +81,7 @@ namespace SysVentas.Infrastructure.Data.initialize
                 productDataContext.InvoiceMasters.Add(invoiceIvan4);
 
             #endregion
+            InitializeDuvanInvoices(productDataContext);
             productDataContext.SaveChanges();
         }
     }
