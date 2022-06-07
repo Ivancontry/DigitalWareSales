@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {InvoiceMaster} from '../../models/invoice-master';
-import {CreateInvoiceService} from '../../services/create-invoice.service';
 import {ListInvoicesService} from '../../services/list-invoices.service';
 
 @Component({
@@ -14,6 +13,7 @@ export class ListInvoicesComponent implements OnInit {
     invoices: InvoiceMaster[] = [];
 
     constructor(private _listInvoicesService: ListInvoicesService, private router: Router) {
+
     }
 
     ngOnInit(): void {
@@ -34,7 +34,9 @@ export class ListInvoicesComponent implements OnInit {
         this.router.navigate([`invoicing/${invoice.id}/detail`])
     }
 
-    cancelInvoice(invoice: InvoiceMaster) {
+
+
+    cancelInvoice(invoice: InvoiceMaster){
         this._listInvoicesService.cancelInvoice(invoice.id, new Date()).subscribe(result => {
             if (!result) return;
             alert(result.message);

@@ -5,7 +5,7 @@ import {FindProductModule} from "../../shared/find-product/find-product.module";
 import {FindClientModule} from "../../shared/find-client/find-client.module";
 import {RouterModule} from "@angular/router";
 import {DxiItemModule} from "devextreme-angular/ui/nested";
-import {DxButtonModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
+import {DxButtonModule, DxDataGridModule, DxFormModule, DxPopupModule} from "devextreme-angular";
 import { ListInvoicesComponent } from './components/list-invoices/list-invoices.component';
 import { DetailInvoiceComponent } from './components/detail-invoice/detail-invoice.component';
 
@@ -38,7 +38,8 @@ const routes = [
         DxiItemModule,
         DxFormModule,
         DxDataGridModule,
-        DxButtonModule
+        DxButtonModule,
+        DxPopupModule
     ]
 })
 export class InvoicingModule {
