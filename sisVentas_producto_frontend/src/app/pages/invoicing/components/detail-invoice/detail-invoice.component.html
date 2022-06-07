@@ -1,11 +1,16 @@
 <div class="content-block dx-card padding-1">
     <dx-form [formData]="invoiceMaster" [readOnly]="true" [colCount]="4">
-        <dxi-item dataField="createdAt" [label]="{text:'Fecha Creación'}"></dxi-item>
-        <dxi-item dataField="createdAt" [label]="{text:'Fecha Anulación'}"></dxi-item>
-        <dxi-item dataField="total"  [label]="{text:'Total'}"
-            editorType="dxNumberBox"
-            [editorOptions]="{format: {type:'currency',currency:'COP', precision: 2}}"
-        ></dxi-item>
+        <dxi-item dataField="createdAt"
+                  [editorOptions]="{format:{dataType:'date',format:'shortDateShortTime' }}"
+                  [label]="{text:'Fecha Creación'}"></dxi-item>
+
+        <dxi-item dataField="dateCancel"
+                  [editorOptions]="{format:{dataType:'date',format:'shortDateShortTime' }}"
+                  [label]="{text:'Fecha Anulación'}"></dxi-item>
+
+        <dxi-item dataField="total" [label]="{text:'Total'}" editorType="dxNumberBox"
+                  [editorOptions]="{format: {type:'currency',currency:'COP', precision: 2}}">
+        </dxi-item>
         <dxi-item dataField="status" [label]="{text:'Estado'}"></dxi-item>
         <dxi-item dataField="client.identification" [label]="{text:'Identificación'}"></dxi-item>
         <dxi-item dataField="client.name" [label]="{text:'Nombre'}"></dxi-item>
@@ -14,10 +19,8 @@
 
     </dx-form>
     <dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados"
-          [dataSource]="invoiceMaster.details">
-        <dxo-editing
-            mode="row"
-        ></dxo-editing>
+                  [dataSource]="invoiceMaster.details">
+        <dxo-editing mode="row"></dxo-editing>
         <dxi-column dataField="product.name" caption="Nombre de producto"></dxi-column>
         <dxi-column dataField="price" caption="Precio" [format]="{currency:'COP'}"></dxi-column>
         <dxi-column dataField="amount" caption="Cantidad" format="#.#"></dxi-column>

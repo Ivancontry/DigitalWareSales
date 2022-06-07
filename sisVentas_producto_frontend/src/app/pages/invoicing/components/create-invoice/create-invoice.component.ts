@@ -4,6 +4,7 @@ import {FindProductModel} from "../../../../shared/find-product/find-product-mod
 import {InvoiceDetail} from '../../models/invoice-detail';
 import {CreateInvoiceRequest, CreateInvoiceService} from "../../services/create-invoice.service";
 import CustomStore from "devextreme/data/custom_store";
+import {Route, Router} from "@angular/router";
 
 @Component({
     selector: 'app-create-invoice',
@@ -20,7 +21,7 @@ export class CreateInvoiceComponent implements OnInit {
         onClick: this.AddProduct.bind(this)
     };
 
-    constructor(private _createInvoiceService: CreateInvoiceService) {
+    constructor(private _createInvoiceService: CreateInvoiceService,private router: Router) {
     }
 
     ngOnInit(): void {
@@ -67,6 +68,7 @@ export class CreateInvoiceComponent implements OnInit {
         }
         this._createInvoiceService.createInvoice(request).subscribe(result => {
             if (!result) return;
+            this.router.navigate([`invoicing`])
             alert(result.message);
         })
     }

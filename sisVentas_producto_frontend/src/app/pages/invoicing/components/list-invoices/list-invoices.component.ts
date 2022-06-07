@@ -28,7 +28,7 @@ export class ListInvoicesComponent implements OnInit{
     CreateInvoice(){
         this.router.navigate(['invoicing/create'])
     }
-    deleteRecords():void{
-        this.router.navigate(['invoicing/detail'])
+    seeDetail(invoice: InvoiceMaster):void{
+        this.router.navigate([`invoicing/${invoice.id}/detail`])
     }
 }

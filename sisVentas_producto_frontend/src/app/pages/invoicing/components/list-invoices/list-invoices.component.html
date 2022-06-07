@@ -3,23 +3,25 @@
     <dx-button type="button" text="Create" (onClick)="CreateInvoice()"></dx-button>
 </div>
 
-<dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados"
-              [dataSource]="invoices">
-    <dxo-editing
-        mode="row"
-        [useIcons]="true"
-    ></dxo-editing>
-    <dxi-column dataField="date" caption="Fecha de Creación"></dxi-column>
-    <dxi-column dataField="dateCancel" caption="Fecha de Anulación"></dxi-column>
+<dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados" [dataSource]="invoices">
+
+    <dxi-column dataField="createdAt" dataType="date" caption="Fecha de Creación"></dxi-column>
+    <dxi-column dataField="dateCancel" dataType="date" caption="Fecha de Anulación"></dxi-column>
     <dxi-column dataField="client.name" caption="Cliente"></dxi-column>
     <dxi-column dataField="total" format="currency" dataType="number"></dxi-column>
     <dxi-column dataField="status" caption="Estado"></dxi-column>
-    <dxi-column type="buttons">
-        <dxi-button
-            text="Editar"
-            hint="My Command"
-            [onClick]="deleteRecords()"></dxi-button>
+    <dxi-column dataField="" [showEditorAlways]="true"
+                [fixed]="true" editCellTemplate="editTemplate">
     </dxi-column>
+    <ng-template #editorTemplate let-data="data"></ng-template>
+    <div *dxTemplate="let data of 'editTemplate'">
+        <dx-button type="default" (onClick)="seeDetail(data.data)" text="Ver">
+        </dx-button>
+    </div>
+    <div *dxTemplate="let data of 'valueTemplate'">
+        <ng-container [ngTemplateOutlet]="editorTemplate"
+                      [ngTemplateOutletContext]="{ data: data, editTemplate: false }"></ng-container>
+    </div>
 
 </dx-data-grid>
 

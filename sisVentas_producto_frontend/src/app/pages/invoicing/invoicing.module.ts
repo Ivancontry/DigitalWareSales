@@ -19,7 +19,7 @@ const routes = [
         component:CreateInvoiceComponent
     },
     {
-        path: 'detail',
+        path: ':invoiceId/detail',
         component:DetailInvoiceComponent
     }
 ]
