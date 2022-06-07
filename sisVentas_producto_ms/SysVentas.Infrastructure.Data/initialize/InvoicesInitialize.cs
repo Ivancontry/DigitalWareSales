@@ -49,8 +49,8 @@ namespace SysVentas.Infrastructure.Data.initialize
 
             #region categoryClothing
             var categoryClothing = productDataContext.Categories.Include(t => t.Products).FirstOrDefault(t => t.Code == "Clo-002");
-            var productClothingShirt = categoryTechnology.Products.FirstOrDefault(t => t.Code == "Pan-01");
-            var productClothingPants = categoryTechnology.Products.FirstOrDefault(t => t.Code == "Shi-11");
+            var productClothingShirt = categoryClothing.Products.FirstOrDefault(t => t.Code == "Pan-01");
+            var productClothingPants = categoryClothing.Products.FirstOrDefault(t => t.Code == "Shi-11");
 
             #endregion
 
