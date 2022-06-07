@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SysVentas.Domain.Base
+﻿namespace SysVentas.Domain.Base
 {
     public interface IEntity<T>
     {

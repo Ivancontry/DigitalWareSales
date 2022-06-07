@@ -1,7 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using SysVentas.Application.Clients;
 using SysVentas.Application.Invoices;
 
 namespace SysVentas.WebApi.Controllers

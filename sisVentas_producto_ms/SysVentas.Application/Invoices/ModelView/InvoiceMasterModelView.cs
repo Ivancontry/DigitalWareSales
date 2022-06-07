@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SysVentas.Application.Base;
 using SysVentas.Application.Clients.ModelView;
 using SysVentas.Domain.Entities.Invoices;

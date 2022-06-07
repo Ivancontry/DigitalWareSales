@@ -3,17 +3,14 @@ using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
 using SysVentas.Domain.Contracts;
-using SysVentas.Domain.Entities.Clients;
 namespace SysVentas.Application.Clients
 {
     public class InactiveClientCommand : IRequestHandler<InactiveClientRequest, InactiveClientResponse>
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IValidator<InactiveClientRequest> _validator;
-        public InactiveClientCommand(IUnitOfWork unitOfWork, IValidator<InactiveClientRequest> validator)
+        public InactiveClientCommand(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _validator = validator;
         }
         public Task<InactiveClientResponse> Handle(InactiveClientRequest request, CancellationToken cancellationToken)
         {

@@ -1,8 +1,6 @@
 ﻿using MediatR;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using SysVentas.Application.Clients.ModelView;
@@ -22,7 +20,7 @@ namespace SysVentas.Application.Invoices
         public Task<GetInvoicesResponse> Handle(GetInvoicesRequest request, CancellationToken cancellationToken)
         {
             var invoices = _unitOfWork.InvoicesMasterRepository.FindBy(includeProperties:"Client").ToList();           
-            return Task.FromResult(new GetInvoicesResponse(this.MapperInvoice(invoices)));
+            return Task.FromResult(new GetInvoicesResponse(MapperInvoice(invoices)));
         }
 
         private List<InvoiceMasterModelView> MapperInvoice(List<InvoiceMaster> invoicesMaster)
