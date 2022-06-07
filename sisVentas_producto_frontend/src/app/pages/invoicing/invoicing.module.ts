@@ -7,6 +7,7 @@ import {RouterModule} from "@angular/router";
 import {DxiItemModule} from "devextreme-angular/ui/nested";
 import {DxButtonModule, DxDataGridModule, DxFormModule} from "devextreme-angular";
 import { ListInvoicesComponent } from './components/list-invoices/list-invoices.component';
+import { DetailInvoiceComponent } from './components/detail-invoice/detail-invoice.component';
 
 const routes = [
     {
@@ -16,13 +17,18 @@ const routes = [
     {
         path: 'create',
         component:CreateInvoiceComponent
+    },
+    {
+        path: 'detail',
+        component:DetailInvoiceComponent
     }
 ]
 
 @NgModule({
     declarations: [
         CreateInvoiceComponent,
-        ListInvoicesComponent
+        ListInvoicesComponent,
+        DetailInvoiceComponent
     ],
     imports: [
         CommonModule,

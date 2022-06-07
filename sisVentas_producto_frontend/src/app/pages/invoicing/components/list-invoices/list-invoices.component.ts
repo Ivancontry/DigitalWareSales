@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { InvoiceMaster } from '../../models/invoice-master';
 import { CreateInvoiceService } from '../../services/create-invoice.service';
 
@@ -11,7 +12,7 @@ export class ListInvoicesComponent implements OnInit{
 
     invoices: InvoiceMaster[] = [];
 
-    constructor(private _createInvoiceService: CreateInvoiceService) {}
+    constructor(private _createInvoiceService: CreateInvoiceService,private router: Router) {}
 
     ngOnInit(): void {
         this.getInvoices();
@@ -20,10 +21,15 @@ export class ListInvoicesComponent implements OnInit{
     getInvoices() {
         this._createInvoiceService.getInvoices().subscribe(t=>
             {
-                debugger;
                 this.invoices = Object.assign([],t.invoiceMasters);
             });
-            this.invoices
     }
 
+    CreateInvoice(){
+        this.router.navigate(['invoicing/create'])
+    }
+    deleteRecords():void{
+        debugger;
+        this.router.navigate(['invoicing/detail'])
+    }
 }
