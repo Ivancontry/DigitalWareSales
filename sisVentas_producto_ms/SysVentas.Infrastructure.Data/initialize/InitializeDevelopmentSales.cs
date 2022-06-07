@@ -14,6 +14,7 @@ namespace SysVentas.Infrastructure.Data.initialize
         {
             if (!_context.Categories.Any()) CategoryInitialize.InitializeCategory(_context);
             if (!_context.Clients.Any()) ClientInitialize.InitializeClient(_context);
+            if (!_context.InvoiceMasters.Any()) InvoicesInitialize.InitializeInvoice(_context);
         }
     }
 }
