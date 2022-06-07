@@ -1,11 +1,13 @@
-<h2 class="content-block">Facturas</h2>
+<div class="content-block ">
+    <h2 class="inline-items">Facturas</h2>
+    <dx-button type="button" text="Create" (onClick)="CreateInvoice()"></dx-button>
+</div>
+
 <dx-data-grid class="content-block dx-card" noDataText="Sin productos agregados"
               [dataSource]="invoices">
     <dxo-editing
         mode="row"
-        [allowDeleting]="true"
         [useIcons]="true"
-        [texts]="{confirmDeleteMessage:'Esta seguro que quiere eliminar este registro'}"
     ></dxo-editing>
     <dxi-column dataField="date" caption="Fecha de Creación"></dxi-column>
     <dxi-column dataField="dateCancel" caption="Fecha de Anulación"></dxi-column>
@@ -13,8 +15,12 @@
     <dxi-column dataField="total" format="currency" dataType="number"></dxi-column>
     <dxi-column dataField="status" caption="Estado"></dxi-column>
     <dxi-column type="buttons">
-        <dxi-button name="delete"></dxi-button>
+        <dxi-button
+            text="Editar"
+            hint="My Command"
+            [onClick]="deleteRecords()"></dxi-button>
     </dxi-column>
+
 </dx-data-grid>
 
 
