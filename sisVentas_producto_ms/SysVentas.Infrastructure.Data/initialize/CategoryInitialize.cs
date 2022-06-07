@@ -37,9 +37,9 @@ namespace SysVentas.Infrastructure.Data.initialize
             #region categoryFootwear
                 var categoryFootwear = new Category(DateTime.Now, "Foo-003", "Calzado");
                 var productFootwearBlack = new Product(DateTime.Now, "Zapato Negro", "Zap-14", 15, 180000);
-                var productFootwearBlue = new Product(DateTime.Now, "Blusa azul", "Zap-15", 20, 150000);
-                var productFootwearWhite = new Product(DateTime.Now, "Short", "Zap-19", 20, 130000);
-                var productFootwearGreen = new Product(DateTime.Now, "Camisa", "Zap-21", 20, 1450000);
+                var productFootwearBlue = new Product(DateTime.Now, "Zapato Blanco", "Zap-15", 20, 150000);
+                var productFootwearWhite = new Product(DateTime.Now, "Zapato Azul", "Zap-19", 20, 130000);
+                var productFootwearGreen = new Product(DateTime.Now, "Zapato Rojo", "Zap-21", 20, 1450000);
                 categoryFootwear.Products.Add(productFootwearBlack);
                 categoryFootwear.Products.Add(productFootwearWhite);
                 categoryFootwear.Products.Add(productFootwearGreen);
