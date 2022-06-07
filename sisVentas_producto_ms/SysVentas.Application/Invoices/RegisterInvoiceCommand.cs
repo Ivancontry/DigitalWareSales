@@ -22,7 +22,7 @@ namespace SysVentas.Application.Invoices
 
         public Task<RegisterInvoiceResponse> Handle(RegisterInvoiceRequest request, CancellationToken cancellationToken)
         {
-            var invoice = new InvoiceMaster(request.Date, request.ClientId);
+            var invoice = new InvoiceMaster(request.ClientId);
             request.Products.ForEach(p =>
             {
                 var product = _unitOfWork.CategorysRepository.GetProduct(p.ProductId);
@@ -38,7 +38,6 @@ namespace SysVentas.Application.Invoices
     public class RegisterInvoiceRequest : IRequest<RegisterInvoiceResponse>
     {
         public long ClientId { get; set; }
-        public DateTime Date { get; set; }
         public List<ClientProductModelView> Products { get; set; }
     }
     public class RegisterInvoiceResponse

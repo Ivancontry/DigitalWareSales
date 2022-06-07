@@ -19,7 +19,7 @@ export class CreateInvoiceService {
     getInvoices(): Observable<any>{
         return this._httpClient.get<any>(`${environment.baseUrl}invoice`);
     }
-    getInvoice(id:number): Observable<InvoiceMaster>{
+    getInvoice(id:number): Observable<any>{
         return this._httpClient.get<any>(`${environment.baseUrl}invoice/${id}`);
     }
 }

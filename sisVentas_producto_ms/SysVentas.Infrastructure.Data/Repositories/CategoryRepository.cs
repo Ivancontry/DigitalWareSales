@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using SysVentas.Domain.Entities.Categorys;
 using SysVentas.Domain.Repositories;
@@ -18,6 +19,15 @@ namespace SysVentas.Infrastructure.Data.Repositories
             var product = context.Products.Include(p=> p.Category)
                                           .FirstOrDefault(t => t.Id == productId && t.Status != "IN");
             return product;
+        }
+
+        public List<Product> GetProducts()
+        {
+            var context = Db as ProductDataContext;
+            var products = context.Products.Include(p => p.Category)
+                                          .Where(t => t.Status != "IN")
+                                          .ToList();
+            return products;
         }
 
         public Product GetProductForCode(string code)

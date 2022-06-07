@@ -16,9 +16,11 @@ export class DetailInvoiceComponent implements OnInit {
     }
 
     getInvoice() {
-        this._createInvoiceService.getInvoices().subscribe(t=>
+
+        this._createInvoiceService.getInvoice(1).subscribe(t=>
             {
-                this.invoiceMaster = Object.assign(this.invoiceMaster,t.invoiceMaster);
+                debugger
+                this.invoiceMaster = Object.assign({} as InvoiceMaster,t.invoiceMaster);
             });
     }
 

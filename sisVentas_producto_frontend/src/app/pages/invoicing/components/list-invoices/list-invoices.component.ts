@@ -29,7 +29,6 @@ export class ListInvoicesComponent implements OnInit{
         this.router.navigate(['invoicing/create'])
     }
     deleteRecords():void{
-        debugger;
         this.router.navigate(['invoicing/detail'])
     }
 }

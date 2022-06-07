@@ -32,7 +32,7 @@ namespace SysVentas.Domain.Test
                 clientIvan.Id = 1;
             #endregion
 
-            var invoice = new InvoiceMaster(DateTime.Now,clientIvan.Id);
+            var invoice = new InvoiceMaster(clientIvan.Id);
             invoice.AddDetail(productLaptopAcer.Id,1,productLaptopAcer.Price);            
             invoice.AddDetail(productXiaomi.Id, 1, productXiaomi.Price);
             Assert.AreEqual(2600000, invoice.Total);
