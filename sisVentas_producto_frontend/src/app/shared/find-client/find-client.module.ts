@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FindClientComponent } from './find-client/find-client.component';
-import {DxFormModule} from "devextreme-angular";
+import {DxFormModule, DxSelectBoxModule} from "devextreme-angular";
 
 
 
@@ -14,7 +14,8 @@ import {DxFormModule} from "devextreme-angular";
     ],
     imports: [
         CommonModule,
-        DxFormModule
+        DxFormModule,
+        DxSelectBoxModule
     ]
 })
 export class FindClientModule { }

@@ -1,9 +1,7 @@
-<form (submit)="$event.preventDefault();findClient()" id="form">
-    <dx-form [formData]="request" labelLocation="top" [colCount]="2">
-        <dxi-item dataField="identification" [label]="{text:'Identificación'}"></dxi-item>
-        <dxi-item
-            itemType="button" horizontalAlignment="left" verticalAlignment="bottom"
-            [buttonOptions]="submitButtonOptions">
-        </dxi-item>
-    </dx-form>
-</form>
+<dx-select-box noDataText="No hay coincidencias" label="Cliente" labelMode="outside"
+               (onValueChanged)="findClient($event.value)"
+               [dataSource]="clients"
+               displayExpr="name"
+               searchMode="contains"
+               [searchEnabled]="true"
+></dx-select-box>

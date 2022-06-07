@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { ClientService } from '../../services/client.service';
+import {ClientService} from '../../services/client.service';
 import {FindClientModel} from "../find-client-model";
+import {Client} from "../../../pages/invoicing/models/Client";
 
 @Component({
     selector: 'app-find-client',
@@ -10,24 +11,22 @@ import {FindClientModel} from "../find-client-model";
 export class FindClientComponent implements OnInit {
     @Output() onFoundClient: EventEmitter<FindClientModel> = new EventEmitter<FindClientModel>();
     public request: FindClientRequest = new FindClientRequest();
-    submitButtonOptions = {
-        text: 'Buscar',
-        useSubmitBehavior: true
-    };
+    public clients: FindClientModel[] = [];
 
     constructor(private clientService: ClientService) {
     }
 
     ngOnInit(): void {
+        this.getClients();
     }
 
-    findClient() {
-        var findClientRequest = this.request;
-        var client = new FindClientModel();
-        this.clientService.getClientForIdentification(findClientRequest.identification).subscribe(t=>
-            {
-                Object.assign(client,t.client);
-            });
+    private getClients() {
+        this.clientService.getClients().subscribe(result => {
+            this.clients = result.clients;
+        })
+    }
+
+    findClient(client: FindClientModel) {
         this.onFoundClient.emit(client);
     }
 }
