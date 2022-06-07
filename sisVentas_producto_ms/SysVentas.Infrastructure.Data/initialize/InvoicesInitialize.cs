@@ -19,19 +19,28 @@ namespace SysVentas.Infrastructure.Data.initialize
                 var clientIvan = productDataContext.Clients.FirstOrDefault(t => t.Identification == "1003195636");
 
                 var invoiceIvan1 = new InvoiceMaster(clientIvan.Id);
+
                 invoiceIvan1.AddDetail(productLaptopAcer.Id, 2, productLaptopAcer.Price);
                 categoryTechnology.UpdateStockProduct(productLaptopAcer.Id,-2);
-                invoiceIvan1.AddDetail(productLaptopLenovo.Id, 7, productLaptopLenovo.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopAcer.Id, -2);
-                invoiceIvan1.CreatedAt = new DateTime(2000,02,1);
+                productDataContext.InvoiceMasters.Add(invoiceIvan1);
 
                 var invoiceIvan2 = new InvoiceMaster(clientIvan.Id);
-                invoiceIvan1.AddDetail(productLaptopHp.Id, 2, productLaptopHp.Price);
-                invoiceIvan1.CreatedAt = new DateTime(2000, 02, 5);
+                invoiceIvan2.AddDetail(productLaptopLenovo.Id, 7, productLaptopLenovo.Price);
+                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -7);
+                invoiceIvan2.CreatedAt = new DateTime(2000,02,1);
+                productDataContext.InvoiceMasters.Add(invoiceIvan2);
 
                 var invoiceIvan3 = new InvoiceMaster(clientIvan.Id);
-                invoiceIvan1.AddDetail(productLaptopHp.Id, 6, productLaptopHp.Price);
-                invoiceIvan1.CreatedAt = new DateTime(2000, 06, 5);
+                invoiceIvan3.AddDetail(productLaptopHp.Id, 2, productLaptopHp.Price);
+                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -2);
+                invoiceIvan3.CreatedAt = new DateTime(2000, 02, 5);
+                productDataContext.InvoiceMasters.Add(invoiceIvan3);
+
+                var invoiceIvan4 = new InvoiceMaster(clientIvan.Id);
+                invoiceIvan4.AddDetail(productLaptopHp.Id, 6, productLaptopHp.Price);
+                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -6);
+                invoiceIvan4.CreatedAt = new DateTime(2000, 06, 5);
+                productDataContext.InvoiceMasters.Add(invoiceIvan4);
 
             #endregion
 
