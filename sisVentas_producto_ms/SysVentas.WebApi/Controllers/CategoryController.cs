@@ -64,6 +64,12 @@ namespace SysVentas.WebApi.Controllers
             var response = await _mediator.Send(request);
             return Ok(response);
         }
+        [HttpGet("product")]
+        public async Task<IActionResult> GetProducts()
+        {
+            var response = await _mediator.Send(new GetProductsRequest());
+            return Ok(response);
+        }
 
         [HttpPut("product/inactive")]
         public async Task<IActionResult> PutInactive(InactiveProductRequest request)

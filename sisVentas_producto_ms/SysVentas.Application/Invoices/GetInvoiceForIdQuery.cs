@@ -36,6 +36,8 @@ namespace SysVentas.Application.Invoices
             invoiceModelView.Status = invoiceMaster.Status;
             invoiceModelView.Total = invoiceMaster.Total;
             invoiceModelView.ClientId = invoiceMaster.ClientId;
+            invoiceModelView.DateCancel = invoiceMaster.DateCancel;
+            invoiceModelView.CreatedAt = invoiceMaster.CreatedAt;
             invoiceModelView.Client = new ClientModelView().ToDTO(invoiceMaster.Client);
             invoiceModelView.Details = this.MapperInvoiceDetail(invoiceMaster.Details);
             return invoiceModelView;

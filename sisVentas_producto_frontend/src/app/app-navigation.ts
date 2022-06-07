@@ -9,17 +9,9 @@ export const navigation = [
         icon: 'folder',
         items: [
             {
-                text: 'Profile',
-                path: '/profile'
-            },
-            {
                 text: 'Invoicing',
                 path: '/invoicing'
             },
-            {
-                text: 'Tasks',
-                path: '/tasks'
-            }
         ]
     }
 ];
