@@ -21,30 +21,30 @@ namespace SysVentas.Infrastructure.Data.initialize
             var invoiceDuvan1 = new InvoiceMaster(clientDuvan.Id);
 
             invoiceDuvan1.AddDetail(productFootWearBlack.Id, 15, productFootWearBlack.Price);
-            categoryFootWear.UpdateStockProduct(productFootWearBlack.Id, -15);
-            invoiceDuvan1.CreatedAt = new DateTime(2000, 01, 28);
+            categoryFootWear.UpdateStockProduct(productFootWearBlack.Id, -15);            
             productDataContext.InvoiceMasters.Add(invoiceDuvan1);
 
             var invoiceDuvan2 = new InvoiceMaster(clientDuvan.Id);
             invoiceDuvan2.AddDetail(productFootWearBlue.Id, 10, productFootWearBlue.Price);
-            categoryFootWear.UpdateStockProduct(productFootWearBlue.Id, -10);
-            invoiceDuvan2.CreatedAt = new DateTime(2000, 02, 1);
+            categoryFootWear.UpdateStockProduct(productFootWearBlue.Id, -10);            
             productDataContext.InvoiceMasters.Add(invoiceDuvan2);
 
             var invoiceDuvan3 = new InvoiceMaster(clientDuvan.Id);
             invoiceDuvan3.AddDetail(productFootWearWhite.Id, 2, productFootWearWhite.Price);
-            categoryFootWear.UpdateStockProduct(productFootWearWhite.Id, -2);
-            invoiceDuvan3.CreatedAt = new DateTime(2000, 02, 5);
+            categoryFootWear.UpdateStockProduct(productFootWearWhite.Id, -2);            
             productDataContext.InvoiceMasters.Add(invoiceDuvan3);
 
             var invoiceDuvan4 = new InvoiceMaster(clientDuvan.Id);
             invoiceDuvan4.AddDetail(productFootWearWhite.Id, 16, productFootWearWhite.Price);
-            categoryFootWear.UpdateStockProduct(productFootWearWhite.Id, -16);
-            invoiceDuvan4.CreatedAt = new DateTime(2000, 06, 5);
+            categoryFootWear.UpdateStockProduct(productFootWearWhite.Id, -16);            
             productDataContext.InvoiceMasters.Add(invoiceDuvan4);
             #endregion
 
-            productDataContext.SaveChanges();
+            invoiceDuvan1.CreatedAt = new DateTime(2000, 01, 28);
+            invoiceDuvan2.CreatedAt = new DateTime(2000, 02, 1);
+            invoiceDuvan3.CreatedAt = new DateTime(2000, 02, 5);
+            invoiceDuvan4.CreatedAt = new DateTime(2000, 06, 5);
+            
         }
     }
 }

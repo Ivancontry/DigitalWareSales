@@ -28,20 +28,17 @@ namespace SysVentas.Infrastructure.Data.initialize
 
                 var invoiceIvan2 = new InvoiceMaster(clientIvan.Id);
                 invoiceIvan2.AddDetail(productLaptopLenovo.Id, 7, productLaptopLenovo.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -7);
-                invoiceIvan2.CreatedAt = new DateTime(2000,02,1);
+                categoryTechnology.UpdateStockProduct(productLaptopLenovo.Id, -7);                
                 productDataContext.InvoiceMasters.Add(invoiceIvan2);
 
                 var invoiceIvan3 = new InvoiceMaster(clientIvan.Id);
                 invoiceIvan3.AddDetail(productLaptopHp.Id, 2, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -2);
-                invoiceIvan3.CreatedAt = new DateTime(2000, 02, 5);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -2);                
                 productDataContext.InvoiceMasters.Add(invoiceIvan3);
 
                 var invoiceIvan4 = new InvoiceMaster(clientIvan.Id);
                 invoiceIvan4.AddDetail(productLaptopHp.Id, 6, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -6);
-                invoiceIvan4.CreatedAt = new DateTime(2000, 06, 5);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -6);                
                 productDataContext.InvoiceMasters.Add(invoiceIvan4);
 
             #endregion
@@ -49,8 +46,8 @@ namespace SysVentas.Infrastructure.Data.initialize
 
             #region categoryClothing
             var categoryClothing = productDataContext.Categories.Include(t => t.Products).FirstOrDefault(t => t.Code == "Clo-002");
-            var productClothingShirt = categoryClothing.Products.FirstOrDefault(t => t.Code == "Pan-01");
-            var productClothingPants = categoryClothing.Products.FirstOrDefault(t => t.Code == "Shi-11");
+            var productClothingShirt = categoryClothing.Products.FirstOrDefault(t => t.Code == "Shi-11");
+            var productClothingPants = categoryClothing.Products.FirstOrDefault(t => t.Code == "Pan-01");
 
             #endregion
 
@@ -64,25 +61,35 @@ namespace SysVentas.Infrastructure.Data.initialize
 
                 var invoiceHelmer2 = new InvoiceMaster(clientHelmer.Id);
                 invoiceHelmer2.AddDetail(productClothingPants.Id, 7, productClothingPants.Price);
-                categoryClothing.UpdateStockProduct(productClothingPants.Id, -7);
-                invoiceHelmer2.CreatedAt = new DateTime(2000, 03, 17);
+                categoryClothing.UpdateStockProduct(productClothingPants.Id, -7);               
                 productDataContext.InvoiceMasters.Add(invoiceHelmer2);
 
                 var invoiceHelmer3 = new InvoiceMaster(clientHelmer.Id);
                 invoiceHelmer3.AddDetail(productLaptopHp.Id, 1, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -1);
-                invoiceHelmer3.CreatedAt = new DateTime(2000, 03, 13);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -1);                
                 productDataContext.InvoiceMasters.Add(invoiceHelmer3);
 
                 var invoiceHelmer4 = new InvoiceMaster(clientHelmer.Id);
                 invoiceHelmer4.AddDetail(productLaptopHp.Id, 2, productLaptopHp.Price);
-                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -2);
-                invoiceHelmer4.CreatedAt = new DateTime(2000, 04, 12);
-                productDataContext.InvoiceMasters.Add(invoiceIvan4);
+                categoryTechnology.UpdateStockProduct(productLaptopHp.Id, -2);                
+                productDataContext.InvoiceMasters.Add(invoiceHelmer4);
+
 
             #endregion
+            
+            invoiceIvan1.CreatedAt = new DateTime(2000, 02, 8);
+            invoiceIvan2.CreatedAt = new DateTime(2000, 02, 1);
+            invoiceIvan3.CreatedAt = new DateTime(2000, 02, 5);
+            invoiceIvan4.CreatedAt = new DateTime(2000, 06, 5);
+
+            invoiceHelmer1.CreatedAt = new DateTime(2000, 02, 13);
+            invoiceHelmer2.CreatedAt = new DateTime(2000, 03, 17);
+            invoiceHelmer3.CreatedAt = new DateTime(2000, 03, 13);
+            invoiceHelmer4.CreatedAt = new DateTime(2000, 04, 12);
+
             InitializeDuvanInvoices(productDataContext);
             productDataContext.SaveChanges();
+            
         }
     }
 }

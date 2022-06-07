@@ -10,7 +10,7 @@ namespace SysVentas.Infrastructure.Data.initialize
                 var categoryTechnology = new Category(DateTime.Now,"Tec-001","Tecnología");
                 var productLaptopAcer = new Product(DateTime.Now,"Acer Aspire 15","Acer-15",20,1800000);
                 var productLaptopLenovo = new Product(DateTime.Now, "Lenovo", "Len-15", 20, 2800000);
-                var productLaptopHp = new Product(DateTime.Now, "Lenovo", "HP-15", 20, 2100000);
+                var productLaptopHp = new Product(DateTime.Now, "HP", "HP-15", 20, 2100000);
                 var productLaptopMac = new Product(DateTime.Now, "Mac", "Mac-15", 20, 3100000);
                 categoryTechnology.Products.Add(productLaptopAcer);
                 categoryTechnology.Products.Add(productLaptopLenovo);
@@ -33,12 +33,12 @@ namespace SysVentas.Infrastructure.Data.initialize
             #region categoryFootwear
                 var categoryFootwear = new Category(DateTime.Now, "Foo-003", "Calzado");
                 var productFootwearBlack = new Product(DateTime.Now, "Zapato Negro", "Zap-14", 15, 180000);
-                var productFootwearBlue = new Product(DateTime.Now, "Zapato Blanco", "Zap-15", 20, 150000);
-                var productFootwearWhite = new Product(DateTime.Now, "Zapato Azul", "Zap-19", 20, 130000);
-                var productFootwearGreen = new Product(DateTime.Now, "Zapato Rojo", "Zap-21", 20, 1450000);
+                var productFootwearBlue = new Product(DateTime.Now, "Zapato Azul", "Zap-15", 20, 150000);
+                var productFootwearWhite = new Product(DateTime.Now, "Zapato Blanco", "Zap-19", 20, 130000);
+                var productFootwearRed = new Product(DateTime.Now, "Zapato Rojo", "Zap-21", 20, 1450000);
                 categoryFootwear.Products.Add(productFootwearBlack);
                 categoryFootwear.Products.Add(productFootwearWhite);
-                categoryFootwear.Products.Add(productFootwearGreen);
+                categoryFootwear.Products.Add(productFootwearRed);
                 categoryFootwear.Products.Add(productFootwearBlue);
             #endregion
 
